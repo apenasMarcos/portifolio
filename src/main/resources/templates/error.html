@@ -3,13 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Error</title>
-    <link rel="stylesheet" href="/css/error.css">
+    <link rel="stylesheet" type="text/css" href="/css/topbar.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <title>Página não encontrada</title>
 </head>
 <body>
-<div class="error-container">
-    <h1>404 - Página não encontrada</h1>
-    <p>A página que você procura não existe.</p>
-</div>
+
+    <th:block th:replace="~{fragments/topbar}"></th:block>
+
+    <main>
+        <section class="topo-do-site">
+            <div class="interface">
+                <div class="flex">
+                    <div class="txt-topo-site">
+                        <h1>404 - Página não encontrada<span>.</span></h1>
+                        <p>A página que você procura não existe.</p>
+
+                        <div class="btn-contato">
+                            <button>Entre em contato</button>
+                        </div>
+                    </div>
+
+                    <div class="img-topo-site">
+                        <img src="/images/error.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
 </body>
 </html>
