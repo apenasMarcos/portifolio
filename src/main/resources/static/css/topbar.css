@@ -2,7 +2,7 @@
     padding: 10px 40px;
     font-size: 18px;
     font-weight: 600;
-    background-color: #00FF08;
+    background-color: #FF6200FF;
     border: 0;
     border-radius: 30px;
     cursor: pointer;
@@ -10,7 +10,7 @@
 }
 
 .btn-contato button:hover {
-    box-shadow: 0 0 8px #00ff08;
+    box-shadow: 0 0 8px #FF6200FF;
     transform: scale(1.05);
 }
 
