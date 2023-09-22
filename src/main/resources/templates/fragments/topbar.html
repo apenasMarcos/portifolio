@@ -1,0 +1,47 @@
+<header>
+    <div class="interface">
+        <div class="logo">
+            <a href="#">
+                <img src="/images/logo.png" alt="Logo Portfolio">
+            </a>
+        </div>
+
+        <nav class="menu-desktop">
+            <ul>
+                <li><a href="#topo-do-site" th:text="#{topbar.inicio}"></a></li>
+                <li><a href="#especiliadades" th:text="#{topbar.especialidades}"></a></li>
+                <li><a href="#sobre" th:text="#{topbar.sobre}"></a></li>
+                <li><a href="#portfolio" th:text="#{topbar.portifolio}"></a></li>
+                <li><a href="#formulario" th:text="#{topbar.formulario}"></a></li>
+            </ul>
+        </nav>
+
+        <div class="btn-contato">
+            <a href="#">
+                <button>Contato</button>
+            </a>
+        </div>
+
+        <div class="btn-abrir-menu" id="btn-menu">
+            <i class="bi bi-list"></i>
+        </div>
+
+        <div class="menu-mobile" id="menu-mobile">
+            <div class="btn-fechar">
+                <i class="bi bi-x-lg"></i>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="#topo-do-site" th:text="#{topbar.inicio}"></a></li>
+                    <li><a href="#especiliadades" th:text="#{topbar.especialidades}"></a></li>
+                    <li><a href="#sobre" th:text="#{topbar.sobre}"></a></li>
+                    <li><a href="#portfolio" th:text="#{topbar.portifolio}"></a></li>
+                    <li><a href="#formulario" th:text="#{topbar.formulario}"></a></li>
+                </ul>
+            </nav>
+
+        </div>
+        <div class="overlay-menu" id="overlay-menu"></div>
+    </div>
+</header>

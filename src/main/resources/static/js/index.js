@@ -15,34 +15,25 @@ overlay.addEventListener('click', ()=>{
 })
 
 document.addEventListener('DOMContentLoaded', function() {
-    const links = document.querySelectorAll('a[href^="#"]');
+    const menuLinks = document.querySelectorAll('nav.menu-desktop a');
 
-    links.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
-
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop,
-                    behavior: 'smooth'
-                });
-            }
-        });
+    menuLinks.forEach(link => {
+        link.addEventListener('click', scrollToSection);
     });
 
-    // Lógica para o botão "Contato"
-    const btnContato = document.querySelector('.btn-contato a');
-    btnContato.addEventListener('click', function(e) {
+    function scrollToSection(e) {
         e.preventDefault();
-        const formularioSection = document.getElementById('formulario');
 
-        if (formularioSection) {
-            window.scrollTo({
-                top: formularioSection.offsetTop,
-                behavior: 'smooth'
-            });
-        }
-    });
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+
+        // Obtemos a posição do topo do elemento em relação à janela
+        const offsetTop = targetElement.offsetTop;
+
+        // Realizamos o scroll suave
+        window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+        });
+    }
 });

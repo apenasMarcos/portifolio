@@ -31,6 +31,9 @@ body {
     transition: .2s;
 }
 
+
+
+
 h2.titulo {
     color: #fff;
     font-size: 38px;
@@ -80,7 +83,6 @@ header nav.menu-desktop ul li {
 }
 
 /* ESTILO DO MENU MOBILE */
-
 .btn-abrir-menu{
     display: none;
 }
@@ -109,7 +111,6 @@ header nav.menu-desktop ul li {
 .menu-mobile.abrir-menu ~ .overlay-menu{
     display: block;
 }
-
 
 .menu-mobile .btn-fechar{
     padding: 20px 5%;
@@ -179,12 +180,10 @@ section.topo-do-site .flex {
     animation: flutuar 2s ease-in-out infinite alternate;
 }
 
-
 @keyframes flutuar {
     0% {
         top: 0;
     }
-
     100% {
         top: 30px;
     }
@@ -262,6 +261,15 @@ section.sobre .flex {
     cursor: pointer;
     margin: 0 5px;
     transition: .2s;
+    outline: none;
+}
+
+.btn-social a {
+    text-decoration: none;
+    display: inline-block;
+    width: fit-content;
+    height: fit-content;
+    margin: 5px;
 }
 
 /* ESTILO DO PORTFÓLIO */
@@ -358,7 +366,6 @@ form .btn-enviar input {
 }
 
 /* ESTILO DO RODAPÉ */
-
 footer {
     padding: 40px 4%;
     box-shadow: 0 0 40px 10px #ffffff1d;
@@ -385,10 +392,7 @@ footer .line-footer p a {
     color: #fff;
 }
 
-
-
 @media screen and (max-width: 1020px) {
-
     /* CLASSES GERAIS */
     .flex {
         flex-direction: column;
@@ -410,7 +414,6 @@ footer .line-footer p a {
     }
 
     /* TOPO DO SITE */
-
     section.topo-do-site .flex {
         gap: 40px;
     }
