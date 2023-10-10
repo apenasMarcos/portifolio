@@ -16,7 +16,54 @@
 </head>
     <body>
 
-    <th:block th:replace="~{fragments/topbar}"></th:block>
+        <header>
+            <div class="interface">
+                <div class="logo">
+                    <a href="/">
+                        <img src="/images/logo.png" alt="Logo Portfolio">
+                    </a>
+                </div>
+
+                <nav class="menu-desktop">
+                    <ul>
+                        <li><a href="#topo-do-site" th:text="#{topbar.inicio}"></a></li>
+                        <li><a href="#especiliadades" th:text="#{topbar.especialidades}"></a></li>
+                        <li><a href="#sobre" th:text="#{topbar.sobre}"></a></li>
+                        <li><a href="#portfolio" th:text="#{topbar.portifolio}"></a></li>
+                        <li><a href="#formulario" th:text="#{topbar.formulario}"></a></li>
+                    </ul>
+                </nav>
+
+                <div class="btn-contato">
+                    <a href="#">
+                        <button th:text="#{topbar.contato}"></button>
+                    </a>
+                </div>
+
+                <div class="btn-abrir-menu" id="btn-menu">
+                    <i class="bi bi-list"></i>
+                </div>
+
+                <div class="menu-mobile" id="menu-mobile">
+                    <div class="btn-fechar">
+                        <i class="bi bi-x-lg"></i>
+                    </div>
+
+                    <nav>
+                        <ul>
+                            <li><a href="#topo-do-site" th:text="#{topbar.inicio}"></a></li>
+                            <li><a href="#especiliadades" th:text="#{topbar.especialidades}"></a></li>
+                            <li><a href="#sobre" th:text="#{topbar.sobre}"></a></li>
+                            <li><a href="#portfolio" th:text="#{topbar.portifolio}"></a></li>
+                            <li><a href="#formulario" th:text="#{topbar.formulario}"></a></li>
+                        </ul>
+                    </nav>
+
+                </div>
+                <div class="overlay-menu" id="overlay-menu"></div>
+            </div>
+        </header>
+
 
         <main>
             <section id="topo-do-site" class="topo-do-site">
@@ -74,8 +121,8 @@
 
                         <div class="txt-sobre">
                             <h2>MUITO PRAZER, <span>SOU MARCOS PAULO.</span></h2>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At accusantium ducimus dicta suscipit, neque cumque sunt tenetur totam delectus magnam minus ratione. Quidem sequi velit voluptatibus eos omnis ullam officiis.</p>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam quidem quae iusto repellendus eaque, ipsum sed voluptate explicabo voluptas, dolorum porro sequi laudantium? Obcaecati quae, dolores illo officiis a numquam.</p>
+                            <p th:text="#{index.sobre.primeiro.paragrafo}"></p>
+                            <p th:text="#{index.sobre.segundo.paragrafo}"></p>
                             <div class="btn-social">
                                 <a href="https://github.com/apenasMarcos" target="_blank">
                                     <button><i class="bi bi-github"></i></button>
@@ -111,11 +158,11 @@
 
             <section id="formulario" class="formulario">
                 <div class="interface">
-                    <h2 class="titulo">FALA <span>COMIGO.</span></h2>
+                    <h2 class="titulo">FALE <span>COMIGO.</span></h2>
 
-                    <form action="">
+                    <form action="/fale-comigo" method="post" th:object="${EmailForm}">
                         <label for="nome"></label><input type="text" name="" id="nome" placeholder="Seu nome completo:" required>
-                        <label for="email"></label><input type="text" name="" id="email" placeholder="Seu e-mail:" required>
+                        <label for="remetente"></label><input type="text" name="" id="remetente" placeholder="Seu e-mail:" required>
                         <label for="celular"></label><input type="text" name="" id="celular" placeholder="Seu celular:">
                         <label for="mensagem"></label><textarea name="" id="mensagem" placeholder="Sua mensagem" required></textarea>
                         <div class="btn-enviar"><input type="submit" value="ENVIAR"></div>
