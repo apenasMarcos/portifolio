@@ -8,23 +8,23 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class EmailQueueConfiguration {
 
-    public static final String ENVIO_EMAIL_EXCHANGE = "envioEmail.exchange";
-    public static final String ENVIO_EMAIL_QUEUE = "envioEmail.queue";
+    public static final String ENVIO_EMAIL_EXCHANGE = "ENVIO_EMAIL_EXCHANGE";
+    public static final String ENVIO_EMAIL_QUEUE = "ENVIO_EMAIL_QUEUE";
     public static final String ROUTING_KEY = "envioEmail";
 
+
     @Bean
-    DirectExchange processarEnvioEmailExchange() {
+    public DirectExchange processarEnvioEmailExchange() {
         return new DirectExchange(ENVIO_EMAIL_EXCHANGE);
     }
 
-    @Bean(name = ENVIO_EMAIL_QUEUE)
-    Queue processarEnvioEmailQueue() {
+    @Bean
+    public Queue processarEnvioEmailQueue() {
         return QueueBuilder.durable(ENVIO_EMAIL_QUEUE).build();
     }
 
     @Bean
-    Binding binding() {
-        return BindingBuilder.bind(processarEnvioEmailQueue()).to(processarEnvioEmailExchange()).with(ROUTING_KEY);
+    public Binding binding(Queue processarEnvioEmailQueue, DirectExchange processarEnvioEmailExchange) {
+        return BindingBuilder.bind(processarEnvioEmailQueue).to(processarEnvioEmailExchange).with(ROUTING_KEY);
     }
-
 }

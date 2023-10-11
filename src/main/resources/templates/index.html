@@ -160,13 +160,14 @@
                 <div class="interface">
                     <h2 class="titulo">FALE <span>COMIGO.</span></h2>
 
-                    <form action="/fale-comigo" method="post" th:object="${EmailForm}">
-                        <label for="nome"></label><input type="text" name="" id="nome" placeholder="Seu nome completo:" required>
-                        <label for="remetente"></label><input type="text" name="" id="remetente" placeholder="Seu e-mail:" required>
-                        <label for="celular"></label><input type="text" name="" id="celular" placeholder="Seu celular:">
-                        <label for="mensagem"></label><textarea name="" id="mensagem" placeholder="Sua mensagem" required></textarea>
+                    <form action="/fale-comigo" method="post">
+                        <label for="nome"></label><input type="text" name="nome" id="nome" placeholder="Seu nome completo:" required>
+                        <label for="remetente"></label><input type="text" name="remetente" id="remetente" placeholder="Seu e-mail:" required>
+                        <label for="celular"></label><input type="text" name="celular" id="celular" placeholder="Seu celular:">
+                        <label for="mensagem"></label><textarea name="mensagem" id="mensagem" placeholder="Sua mensagem" required></textarea>
                         <div class="btn-enviar"><input type="submit" value="ENVIAR"></div>
                     </form>
+
                 </div>
             </section>
         </main>

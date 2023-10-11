@@ -2,12 +2,9 @@ package br.com.marcos.portifolios.controller;
 
 import br.com.marcos.portifolios.model.form.EmailForm;
 import br.com.marcos.portifolios.service.EmailService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class IndexController {
@@ -19,13 +16,13 @@ public class IndexController {
     }
 
     @GetMapping("/")
-    public String index(Model model) {
+    public String index() {
         return "index";
     }
 
     @PostMapping("/fale-comigo")
-    public void falarComigo(@RequestBody EmailForm form) {
-        emailService.enviarQueue(form);
+    public ResponseEntity<String> falarComigo(@ModelAttribute EmailForm form) {
+        emailService.enviarEmailQueue(form);
+        return ResponseEntity.ok("Email enviado com sucesso!");
     }
 }
-
