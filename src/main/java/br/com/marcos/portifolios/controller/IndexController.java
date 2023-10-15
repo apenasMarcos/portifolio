@@ -23,6 +23,6 @@ public class IndexController {
     @PostMapping("/fale-comigo")
     public ResponseEntity<String> falarComigo(@ModelAttribute EmailForm form) {
         emailService.enviarEmailQueue(form);
-        return ResponseEntity.ok("Email enviado com sucesso!");
+        return ResponseEntity.ok("Solicitação de envio realizada com sucesso!");
     }
 }
