@@ -8,12 +8,12 @@ import lombok.NoArgsConstructor;
 
 import java.util.UUID;
 
+@Entity
 @Table(name = "mensagem")
-@Entity(name = "mensagem")
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode
+@EqualsAndHashCode(of = "id")
 public class Mensagem {
 
     @Id @GeneratedValue(strategy = GenerationType.UUID)

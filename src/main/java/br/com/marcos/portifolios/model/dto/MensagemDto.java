@@ -1,4 +1,4 @@
-package br.com.marcos.portifolios.model.form;
+package br.com.marcos.portifolios.model.dto;
 
 
 import br.com.marcos.portifolios.model.Mensagem;

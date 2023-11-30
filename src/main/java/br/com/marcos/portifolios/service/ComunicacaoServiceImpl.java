@@ -1,10 +1,9 @@
 package br.com.marcos.portifolios.service;
 
 import br.com.marcos.portifolios.config.SalvarMensagemQueueConfiguration;
-import br.com.marcos.portifolios.model.form.MensagemForm;
+import br.com.marcos.portifolios.model.dto.MensagemForm;
 import org.springframework.amqp.core.DirectExchange;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.slf4j.Logger;
@@ -26,7 +25,7 @@ public class ComunicacaoServiceImpl implements ComunicacaoService{
     private final String numeroTelefone;
     private final String urlWhatsapp;
 
-    public ComunicacaoServiceImpl(RabbitTemplate rabbitTemplate, @Qualifier("processarSalvarMensagemExchange") DirectExchange salvarMensagemExchange,
+    public ComunicacaoServiceImpl(RabbitTemplate rabbitTemplate, DirectExchange salvarMensagemExchange,
                                   @Value("${whatsapp.numeroTelefone}") String numeroTelefone, @Value("${whatsapp.urlWhatsapp}") String urlWhatsapp) {
         this.rabbitTemplate = rabbitTemplate;
         this.salvarMensagemExchange = salvarMensagemExchange;

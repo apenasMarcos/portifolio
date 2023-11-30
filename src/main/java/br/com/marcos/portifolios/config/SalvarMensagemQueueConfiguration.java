@@ -3,6 +3,8 @@ package br.com.marcos.portifolios.config;
 import org.springframework.amqp.core.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.beans.factory.annotation.Qualifier;
+
 
 
 @Configuration
@@ -24,7 +26,7 @@ public class SalvarMensagemQueueConfiguration {
     }
 
     @Bean
-    public Binding binding(Queue processarSalvarMensagemQueue, DirectExchange processarSalvarMensagemExchange) {
+    public Binding binding(@Qualifier("processarSalvarEmailQueue") Queue processarSalvarMensagemQueue, DirectExchange processarSalvarMensagemExchange) {
         return BindingBuilder.bind(processarSalvarMensagemQueue).to(processarSalvarMensagemExchange).with(ROUTING_KEY);
     }
 }

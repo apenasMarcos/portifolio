@@ -1,6 +1,6 @@
 package br.com.marcos.portifolios.controller;
 
-import br.com.marcos.portifolios.model.form.MensagemForm;
+import br.com.marcos.portifolios.model.dto.MensagemForm;
 import br.com.marcos.portifolios.service.ComunicacaoServiceImpl;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
