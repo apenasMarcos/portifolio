@@ -34,7 +34,7 @@
                     </ul>
                 </nav>
 
-                <div class="btn-contato" href="#" >
+                <div class="btn-contato">
                     <button id="contato" type="button" class="btn btn-primary"  th:text="#{topbar.contato}"></button>
                 </div>
 
@@ -74,6 +74,9 @@
                             <div class="btn-contato">
                                 <a href="#">
                                     <button>Entre em contato</button>
+                                    <dialog>
+                                        <div th:replace="_enviarMensagem :: enviarMensagemFragment"></div>
+                                    </dialog>
                                 </a>
                             </div>
                         </div>

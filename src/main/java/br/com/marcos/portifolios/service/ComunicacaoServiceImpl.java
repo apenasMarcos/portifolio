@@ -1,12 +1,9 @@
 package br.com.marcos.portifolios.service;
 
 import br.com.marcos.portifolios.config.SalvarMensagemQueueConfiguration;
-import br.com.marcos.portifolios.model.Mensagem;
-import br.com.marcos.portifolios.model.form.MensagemForm;
-import br.com.marcos.portifolios.repository.MensagemRepository;
+import br.com.marcos.portifolios.model.dto.MensagemForm;
 import org.springframework.amqp.core.DirectExchange;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.slf4j.Logger;
@@ -16,8 +13,6 @@ import java.awt.*;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.Optional;
-import java.util.UUID;
 
 
 @Service
@@ -29,15 +24,13 @@ public class ComunicacaoServiceImpl implements ComunicacaoService{
     private final DirectExchange salvarMensagemExchange;
     private final String numeroTelefone;
     private final String urlWhatsapp;
-    private final MensagemRepository mensagemRepository;
 
-    public ComunicacaoServiceImpl(RabbitTemplate rabbitTemplate, @Qualifier("processarSalvarMensagemExchange") DirectExchange salvarMensagemExchange,
-                                  @Value("${whatsapp.numeroTelefone}") String numeroTelefone, @Value("${whatsapp.urlWhatsapp}") String urlWhatsapp, MensagemRepository mensagemRepository) {
+    public ComunicacaoServiceImpl(RabbitTemplate rabbitTemplate, DirectExchange salvarMensagemExchange,
+                                  @Value("${whatsapp.numeroTelefone}") String numeroTelefone, @Value("${whatsapp.urlWhatsapp}") String urlWhatsapp) {
         this.rabbitTemplate = rabbitTemplate;
         this.salvarMensagemExchange = salvarMensagemExchange;
         this.numeroTelefone = numeroTelefone;
         this.urlWhatsapp = urlWhatsapp;
-        this.mensagemRepository = mensagemRepository;
     }
 
     @Override
