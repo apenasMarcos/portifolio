@@ -2,6 +2,7 @@ package br.com.marcos.portifolios.service;
 
 import br.com.marcos.portifolios.config.SalvarMensagemQueueConfiguration;
 import br.com.marcos.portifolios.model.dto.MensagemForm;
+import br.com.marcos.portifolios.repository.MensagemRepository;
 import org.springframework.amqp.core.DirectExchange;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Value;
@@ -24,13 +25,15 @@ public class ComunicacaoServiceImpl implements ComunicacaoService{
     private final DirectExchange salvarMensagemExchange;
     private final String numeroTelefone;
     private final String urlWhatsapp;
+    private final MensagemRepository mensagemRepository;
 
     public ComunicacaoServiceImpl(RabbitTemplate rabbitTemplate, DirectExchange salvarMensagemExchange,
-                                  @Value("${whatsapp.numeroTelefone}") String numeroTelefone, @Value("${whatsapp.urlWhatsapp}") String urlWhatsapp) {
+                                  @Value("${whatsapp.numeroTelefone}") String numeroTelefone, @Value("${whatsapp.urlWhatsapp}") String urlWhatsapp, MensagemRepository mensagemRepository) {
         this.rabbitTemplate = rabbitTemplate;
         this.salvarMensagemExchange = salvarMensagemExchange;
         this.numeroTelefone = numeroTelefone;
         this.urlWhatsapp = urlWhatsapp;
+        this.mensagemRepository = mensagemRepository;
     }
 
     @Override

@@ -478,4 +478,26 @@ footer .line-footer p a {
     footer .line-footer {
         text-align: center;
     }
+
+    .swal2-popup {
+        background-color: #000; /* Cor de fundo preto */
+        color: #fff; /* Cor do texto branco */
+    }
+
+    .swal2-title {
+        color: #fff; /* Cor do título branco */
+    }
+
+    .swal2-content {
+        color: #fff; /* Cor do conteúdo branco */
+    }
+
+    .swal2-icon {
+        color: #fff; /* Cor do ícone branco */
+    }
+
+    .swal2-confirm, .swal2-cancel {
+        color: #fff; /* Cor dos botões brancos */
+        background-color: #555; /* Cor de fundo dos botões */
+    }
 }

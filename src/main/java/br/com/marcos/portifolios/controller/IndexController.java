@@ -22,8 +22,13 @@ public class IndexController {
     }
 
     @PostMapping("/salvar-mensagem")
-    public void salvarMensagem(@ModelAttribute MensagemForm form) {
-        comunicacaoServiceImpl.salvarMensagemQueue(form);
+    public ResponseEntity<String> salvarMensagem(@ModelAttribute MensagemForm form) {
+        try {
+            comunicacaoServiceImpl.salvarMensagemQueue(form);
+            return ResponseEntity.ok("Mensagem salva com sucesso.");
+        } catch (Exception ignored) {
+            return ResponseEntity.internalServerError().body("Erro ao salvar a mensagem.");
+        }
     }
 
     @PostMapping("/enviar-whatsapp")
