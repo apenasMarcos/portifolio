@@ -1,5 +1,6 @@
 package br.com.marcos.portifolios.model;
 
+import br.com.marcos.portifolios.model.dto.MensagemForm;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -22,4 +23,11 @@ public class Mensagem {
     private String remetente;
     private String celular;
     private String mensagem;
+
+    public Mensagem(MensagemForm form) {
+        this.nome = form.nome();
+        this.remetente = form.remetente();
+        this.celular = form.celular();
+        this.mensagem = form.mensagem();
+    }
 }

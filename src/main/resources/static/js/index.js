@@ -1,19 +1,3 @@
-let btnMenu = document.getElementById('btn-menu')
-let menu = document.getElementById('menu-mobile')
-let overlay = document.getElementById('overlay-menu')
-
-btnMenu.addEventListener('click', ()=>{
-    menu.classList.add('abrir-menu')
-})
-
-menu.addEventListener('click', ()=>{
-    menu.classList.remove('abrir-menu')
-})
-
-overlay.addEventListener('click', ()=>{
-    menu.classList.remove('abrir-menu')
-})
-
 document.getElementById("meuFormulario").addEventListener("submit", async function (event) {
     event.preventDefault();
 
@@ -40,9 +24,7 @@ document.getElementById("meuFormulario").addEventListener("submit", async functi
             });
         }
     } catch (error) {
-        // Lidar com erros de requisição
         console.error('Erro:', error);
-        // Exibir mensagem de erro usando SweetAlert2
         await Swal.fire({
             icon: 'error',
             title: 'Erro ao salvar mensagem.',
@@ -65,10 +47,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const targetId = this.getAttribute('href').substring(1);
         const targetElement = document.getElementById(targetId);
 
-        // Obtemos a posição do topo do elemento em relação à janela
         const offsetTop = targetElement.offsetTop;
 
-        // Realizamos o scroll suave
         window.scrollTo({
             top: offsetTop,
             behavior: 'smooth'

@@ -1,7 +1,7 @@
 package br.com.marcos.portifolios.controller;
 
 import br.com.marcos.portifolios.model.dto.MensagemForm;
-import br.com.marcos.portifolios.service.ComunicacaoServiceImpl;
+import br.com.marcos.portifolios.service.MensagemServiceImpl;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class IndexController {
 
-    private final ComunicacaoServiceImpl comunicacaoServiceImpl;
+    private final MensagemServiceImpl comunicacaoServiceImpl;
 
-    public IndexController(ComunicacaoServiceImpl comunicacaoServiceImpl) {
+    public IndexController(MensagemServiceImpl comunicacaoServiceImpl) {
         this.comunicacaoServiceImpl = comunicacaoServiceImpl;
     }
 
@@ -31,10 +31,5 @@ public class IndexController {
         }
     }
 
-    @PostMapping("/enviar-whatsapp")
-    public ResponseEntity<String> enviarWhatsapp(@ModelAttribute String mensagem) {
-        comunicacaoServiceImpl.enviarWhatsapp(mensagem);
-        return ResponseEntity.ok("Solicitação de envio realizada com sucesso!");
-    }
 
 }
