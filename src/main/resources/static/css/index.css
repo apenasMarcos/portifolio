@@ -191,6 +191,7 @@ section.sobre .flex {
     border-radius: 50%;
     border: none;
     background-color: #ff6200;
+    color: #000000;
     font-size: 22px;
     cursor: pointer;
     margin: 0 5px;
@@ -371,6 +372,11 @@ body.dark footer .line-footer p a {
 body.dark header nav.menu-desktop a:hover {
     color: #000000;
 }
+
+body.dark .btn-social button {
+    color: white;
+}
+
 .topo-do-site.dark h1 {
     color: #000000;
 }
