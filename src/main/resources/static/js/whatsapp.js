@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         setTimeout(function () {
 
-            window.location.href = 'https://api.whatsapp.com/send?phone=+5521990916427&text=' + text;
+            window.location.href = 'https://api.whatsapp.com/send?phone=+5521967181568&text=' + text;
         }, 1500);
     });
 });

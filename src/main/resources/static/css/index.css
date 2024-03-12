@@ -32,8 +32,18 @@ body {
     transition: .2s;
 }
 
+.botoes {
+    display: flex;
+    flex-direction: row;
+}
 
+.btn-contato {
+    margin-right: 15px;
+}
 
+.btn-curriculo {
+    flex: 0 0 auto;
+}
 
 h2.titulo {
     color: #fff;
