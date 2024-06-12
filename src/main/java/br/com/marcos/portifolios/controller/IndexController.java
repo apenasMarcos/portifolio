@@ -1,7 +1,9 @@
 package br.com.marcos.portifolios.controller;
 
-import br.com.marcos.portifolios.model.dto.MensagemForm;
-import br.com.marcos.portifolios.service.MensagemServiceImpl;
+import br.com.marcos.portifolios.model.dto.MessageForm;
+import br.com.marcos.portifolios.service.MessageServiceImpl;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -10,26 +12,29 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class IndexController {
 
-    private final MensagemServiceImpl comunicacaoServiceImpl;
+    private static final Logger logger = LoggerFactory.getLogger(IndexController.class);
 
-    public IndexController(MensagemServiceImpl comunicacaoServiceImpl) {
-        this.comunicacaoServiceImpl = comunicacaoServiceImpl;
+    private final MessageServiceImpl messageServiceImpl;
+
+    public IndexController(MessageServiceImpl messageServiceImpl) {
+        this.messageServiceImpl = messageServiceImpl;
     }
 
     @GetMapping("/")
     public String index() {
+        logger.info("GET request received for /");
         return "index";
     }
 
-    @PostMapping("/salvar-mensagem")
-    public ResponseEntity<String> salvarMensagem(@ModelAttribute MensagemForm form) {
+    @PostMapping("/save-message")
+    public ResponseEntity<String> saveMessage(@ModelAttribute MessageForm form) {
         try {
-            comunicacaoServiceImpl.salvarMensagemQueue(form);
-            return ResponseEntity.ok("Mensagem salva com sucesso.");
-        } catch (Exception ignored) {
-            return ResponseEntity.internalServerError().body("Erro ao salvar a mensagem.");
+            logger.info("Received POST request to save message: {}", form.toString());
+            messageServiceImpl.saveMessageQueue(form);
+            return ResponseEntity.ok("Message forwarded for saving.");
+        } catch (Exception ex) {
+            logger.error("Error saving the message.", ex);
+            return ResponseEntity.internalServerError().body("Error saving the message.");
         }
     }
-
-
 }

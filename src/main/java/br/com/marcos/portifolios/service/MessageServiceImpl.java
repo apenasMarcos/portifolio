@@ -13,28 +13,28 @@ import org.springframework.transaction.annotation.Transactional;
 
 
 @Service
-public class MensagemServiceImpl implements MensagemService {
+public class MessageServiceImpl implements MessageService {
 
-    private static final Logger logger = LoggerFactory.getLogger(MensagemServiceImpl.class);
+    private static final Logger logger = LoggerFactory.getLogger(MessageServiceImpl.class);
 
     private final RabbitTemplate rabbitTemplate;
     private final DirectExchange salvarMensagemExchange;
     private final MessageRepository messageRepository;
 
-    public MensagemServiceImpl(RabbitTemplate rabbitTemplate, DirectExchange salvarMensagemExchange, MessageRepository messageRepository) {
+    public MessageServiceImpl(RabbitTemplate rabbitTemplate, DirectExchange salvarMensagemExchange, MessageRepository messageRepository) {
         this.rabbitTemplate = rabbitTemplate;
         this.salvarMensagemExchange = salvarMensagemExchange;
         this.messageRepository = messageRepository;
     }
 
     @Override
-    public void salvarMensagemQueue(MessageForm email) {
+    public void saveMessageQueue(MessageForm email) {
         rabbitTemplate.convertAndSend(salvarMensagemExchange.getName(), SaveMessageQueueConfiguration.ROUTING_KEY, email);
     }
 
     @Transactional
     @Override
-    public void salvarMensagem(MessageForm form) {
+    public void saveMessage(MessageForm form) {
         Message mensagem = new Message(form);
         messageRepository.save(mensagem);
     }

@@ -1,6 +1,6 @@
 package br.com.marcos.portifolios.model;
 
-import br.com.marcos.portifolios.model.dto.MensagemForm;
+import br.com.marcos.portifolios.model.dto.MessageForm;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -10,24 +10,26 @@ import lombok.NoArgsConstructor;
 import java.util.UUID;
 
 @Entity
-@Table(name = "mensagem")
+@Table(name = "message")
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
-public class Mensagem {
+public class Message {
 
-    @Id @GeneratedValue(strategy = GenerationType.UUID)
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
-    private String nome;
-    private String remetente;
-    private String celular;
-    private String mensagem;
 
-    public Mensagem(MensagemForm form) {
-        this.nome = form.nome();
-        this.remetente = form.remetente();
-        this.celular = form.celular();
-        this.mensagem = form.mensagem();
+    private String name;
+    private String sender;
+    private String phone;
+    private String messageContent;
+
+    public Message(MessageForm form) {
+        this.name = form.name();
+        this.sender = form.sender();
+        this.phone = form.phone();
+        this.messageContent = form.messageContent();
     }
 }
