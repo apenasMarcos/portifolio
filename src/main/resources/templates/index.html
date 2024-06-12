@@ -11,7 +11,7 @@
     <link rel="icon" href="/images/naruto.png" type="image/png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
 
-    <title>Portfolios</title>
+    <title>Portfolio</title>
 </head>
     <body>
 
@@ -26,8 +26,8 @@
                 <nav class="menu-desktop">
                     <ul>
                         <li><a href="#topo-do-site" th:text="#{topbar.inicio}"></a></li>
-                        <li><a href="#especiliadades" th:text="#{topbar.especialidades}"></a></li>
                         <li><a href="#sobre" th:text="#{topbar.sobre}"></a></li>
+                        <li><a href="#especiliadades" th:text="#{topbar.especialidades}"></a></li>
                         <li><a href="#portfolio" th:text="#{topbar.portifolio}"></a></li>
                         <li><a href="#formulario" th:text="#{topbar.formulario}"></a></li>
                     </ul>
@@ -45,24 +45,50 @@
             <div class="interface">
                     <div class="flex">
                         <div class="txt-topo-site" id="txt-topo-site">
-                            <h1>HUB DE PORTIFOLIOS <span>.</span></h1>
-                            <p>Olá! eu me chamo Marcos e criei esse pequeno HUB para armazenar meus projetos pessoais.</p>
+                            <h1>SHOWCASE <span>.</span></h1>
+                            <p>Dê um passo adiante para descobrir o meu mundo de desenvolvimento fullstack.
+                                Eu sou o Marcos, criador deste espaço dedicado aos meus projetos pessoais. Aqui, a paixão pela precisão, a busca pela eficiência e a constante busca pela inovação se encontram.
+                                Juntos, podemos transformar ideias em realidade digital. Vamos explorar!</p>
 
                             <div class="botoes">
                                 <div class="btn-contato" id="btnEnviarContato">
                                     <button>Entre em contato</button>
-                                </div>
-
-                                <div class="btn-curriculo; btn-contato" id="btnDownloadCurriculo">
-                                    <a href="/pdf/curriculo.pdf" download>
-                                        <button>Baixar curriculo</button>
-                                    </a>
                                 </div>
                             </div>
                         </div>
 
                         <div class="img-topo-site">
                             <img src="/images/naruto.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="sobre" class="sobre">
+                <div class="interface">
+                    <div class="flex">
+                        <div class="img-sobre">
+                            <img src="/images/foto.png" alt="">
+                        </div>
+
+                        <div class="txt-sobre">
+                            <h2>PRAZER, <span>SOU MARCOS PAULO.</span></h2>
+                            <p th:text="#{index.sobre.primeiro.paragrafo}"></p>
+                            <p th:text="#{index.sobre.segundo.paragrafo}"></p>
+                            <div class="btn-social">
+                                <a href="/pdf/curriculo.pdf" target="_blank">
+                                    <button><i class="bi bi-file-earmark-text"></i></button>
+                                </a>
+                                <a href="https://github.com/apenasMarcos" target="_blank">
+                                    <button><i class="bi bi-github"></i></button>
+                                </a>
+                                <a href="https://www.linkedin.com/in/onlymarc" target="_blank">
+                                    <button><i class="bi bi-linkedin"></i></button>
+                                </a>
+                                <a href="https://www.youtube.com/c/apenasMarcosyt" target="_blank">
+                                    <button><i class="bi bi-youtube"></i></button>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -93,45 +119,18 @@
                 </div>
             </section>
 
-            <section id="sobre" class="sobre">
-                <div class="interface">
-                    <div class="flex">
-                        <div class="img-sobre">
-                            <img src="/images/foto.png" alt="">
-                        </div>
-
-                        <div class="txt-sobre">
-                            <h2>MUITO PRAZER, <span>SOU MARCOS PAULO.</span></h2>
-                            <p th:text="#{index.sobre.primeiro.paragrafo}"></p>
-                            <p th:text="#{index.sobre.segundo.paragrafo}"></p>
-                            <div class="btn-social">
-                                <a href="https://github.com/apenasMarcos" target="_blank">
-                                    <button><i class="bi bi-github"></i></button>
-                                </a>
-                                <a href="https://www.linkedin.com/in/onlymarc" target="_blank">
-                                    <button><i class="bi bi-linkedin"></i></button>
-                                </a>
-                                <a href="https://www.youtube.com/c/apenasMarcosyt" target="_blank">
-                                    <button><i class="bi bi-youtube"></i></button>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
             <section id="portfolio" class="portfolio">
                 <div class="interface">
                     <h2 class="titulo">MEU <span>PORTFÓLIO.</span></h2>
                     <div class="flex">
                         <div class="img-port" style="background-image: url(/images/imagem.jpg);">
-                            <div class="overlay">Projeto 1</div>
+                            <div class="overlay">Projeto 1 (em andamento)</div>
                         </div>
                         <div class="img-port" style="background-image: url(/images/imagem.jpg);">
-                            <div class="overlay">Projeto 2</div>
+                            <div class="overlay">Projeto 2 (em andamento)</div>
                         </div>
                         <div class="img-port" style="background-image: url(/images/imagem.jpg);">
-                            <div class="overlay">Projeto 3</div>
+                            <div class="overlay">Projeto 3 (em andamento)</div>
                         </div>
                     </div>
                 </div>
@@ -143,10 +142,10 @@
 
                     <form id="meuFormulario">
                         <!-- Seus campos de formulário aqui -->
-                        <label for="nome"></label><input type="text" name="nome" id="nome" placeholder="Nome completo:" required>
-                        <label for="remetente"></label><input type="email" name="remetente" id="remetente" placeholder="E-mail:" required>
-                        <label for="celular"></label><input type="text" name="celular" id="celular" placeholder="Celular:">
-                        <label for="mensagem"></label><textarea name="mensagem" id="mensagem" placeholder="Mensagem" required></textarea>
+                        <label for="name"></label><input type="text" name="name" id="name" placeholder="Nome completo:" required>
+                        <label for="sender"></label><input type="email" name="sender" id="sender" placeholder="E-mail:" required>
+                        <label for="phone"></label><input type="text" name="phone" id="phone" placeholder="Celular:">
+                        <label for="messageContent"></label><textarea name="messageContent" id="messageContent" placeholder="Mensagem" required></textarea>
                         <div class="btn-enviar"><input type="submit" value="SALVAR"></div>
                     </form>
                 </div>

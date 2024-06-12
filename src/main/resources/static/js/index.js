@@ -4,7 +4,7 @@ document.getElementById("meuFormulario").addEventListener("submit", async functi
     const formData = new FormData(event.target);
 
     try {
-        const response = await fetch('/salvar-mensagem', {
+        const response = await fetch('/save-message', {
             method: 'POST',
             body: formData
         });

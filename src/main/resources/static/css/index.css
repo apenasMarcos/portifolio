@@ -402,6 +402,11 @@ body.dark .btn-social button {
     color: #000000;
 }
 
+.img-sobre img {
+    border-radius: 10%;
+    object-fit: cover;
+}
+
 .especiliadades.dark .especialidades-box:hover {
     box-shadow: 0 0 20px #252424;
 }
@@ -462,10 +467,6 @@ body.dark .btn-social button {
 
     .btn-social{
         text-align: center;
-    }
-
-    .img-sobre img{
-        width: 100%;
     }
 
     /* PORTFÓLIO */
