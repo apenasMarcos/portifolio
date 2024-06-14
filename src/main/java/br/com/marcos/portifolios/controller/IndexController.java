@@ -31,10 +31,10 @@ public class IndexController {
         try {
             logger.info("Received POST request to save message: {}", form.toString());
             messageServiceImpl.saveMessageQueue(form);
-            return ResponseEntity.ok("Message forwarded for saving.");
+            return ResponseEntity.ok("Messagem encaminhada para salvar.");
         } catch (Exception ex) {
             logger.error("Error saving the message.", ex);
-            return ResponseEntity.internalServerError().body("Error saving the message.");
+            return ResponseEntity.internalServerError().body("Ocorreu um erro ao salvar sua mensagem.");
         }
     }
 }

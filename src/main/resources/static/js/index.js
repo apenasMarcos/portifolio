@@ -1,6 +1,19 @@
 document.getElementById("meuFormulario").addEventListener("submit", async function (event) {
     event.preventDefault();
 
+    const sender = document.getElementById("sender").value;
+    const phone = document.getElementById("phone").value;
+
+    if (!sender && !phone) {
+        await Swal.fire({
+            icon: 'error',
+            title: 'Erro',
+            text: 'Por favor, preencha o campo de e-mail ou celular.',
+            showConfirmButton: true
+        });
+        return;
+    }
+
     const formData = new FormData(event.target);
 
     try {

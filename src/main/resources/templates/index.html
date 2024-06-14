@@ -46,9 +46,9 @@
                     <div class="flex">
                         <div class="txt-topo-site" id="txt-topo-site">
                             <h1>SHOWCASE <span>.</span></h1>
-                            <p>Dê um passo adiante para descobrir o meu mundo de desenvolvimento fullstack.
-                                Eu sou o Marcos, criador deste espaço dedicado aos meus projetos pessoais. Aqui, a paixão pela precisão, a busca pela eficiência e a constante busca pela inovação se encontram.
-                                Juntos, podemos transformar ideias em realidade digital. Vamos explorar!</p>
+                            <p>Dê um passo adiante para descobrir o meu mundo de desenvolvimento fullstack!<br>
+                                Eu sou o Marcos, criador deste espaço dedicado aos meus projetos pessoais. Aqui, a paixão pela precisão, a busca pela eficiência e a constante busca pela inovação se encontram.<br>
+                                Juntos, podemos transformar ideias em realidade digital. Vamos explorar!!</p>
 
                             <div class="botoes">
                                 <div class="btn-contato" id="btnEnviarContato">
@@ -101,14 +101,14 @@
                     <div class="flex">
                         <div class="especialidades-box">
                             <i class="bi bi-braces"></i>
-                            <h3 th:text="#{index.especialidade.programacao.titulo}"></h3>
-                            <p th:text="#{index.especialidade.programacao.texto}"></p>
+                            <h3 th:text="#{index.especialidade.backend.titulo}"></h3>
+                            <p th:text="#{index.especialidade.backend.texto}"></p>
                         </div>
 
                         <div class="especialidades-box">
                             <i class="bi bi-code-square"></i>
-                            <h3 th:text="#{index.especialidade.web.titulo}"></h3>
-                            <p th:text="#{index.especialidade.web.texto}"></p>
+                            <h3 th:text="#{index.especialidade.frontend.titulo}"></h3>
+                            <p th:text="#{index.especialidade.frontend.texto}"></p>
                         </div>
 
                         <div class="especialidades-box">
@@ -139,12 +139,11 @@
 
             <section id="formulario" class="formulario">
                 <div class="interface">
-                    <h2 class="titulo">SALVE SUA <span>MENSAGEM</span> AQUI</h2>
+                    <h2 class="titulo">DESEJA SALVAR UMA <span>MENSAGEM</span> ?</h2>
 
                     <form id="meuFormulario">
-                        <!-- Seus campos de formulário aqui -->
                         <label for="name"></label><input type="text" name="name" id="name" placeholder="Nome completo:" required>
-                        <label for="sender"></label><input type="email" name="sender" id="sender" placeholder="E-mail:" required>
+                        <label for="sender"></label><input type="email" name="sender" id="sender" placeholder="E-mail:">
                         <label for="phone"></label><input type="text" name="phone" id="phone" placeholder="Celular:">
                         <label for="messageContent"></label><textarea name="messageContent" id="messageContent" placeholder="Mensagem" required></textarea>
                         <div class="btn-enviar"><input type="submit" value="SALVAR"></div>
@@ -161,6 +160,9 @@
                             <img id="footerLogoImage"  src="/images/logo-light.png" alt="Logotipo Agência BRN">
                         </div><
                         <div id="btnSocial" class="btn-social">
+                            <a href="/pdf/curriculo.pdf" target="_blank">
+                                <button><i class="bi bi-file-earmark-text"></i></button>
+                            </a>
                             <a href="https://github.com/apenasMarcos" target="_blank">
                                 <button><i class="bi bi-github"></i></button>
                             </a>
@@ -175,7 +177,7 @@
                 </div>
 
                 <div class="line-footer borda">
-                    <p><i class="bi bi-envelope-fill"></i> <a href="mailto:marcos.paulo.mpsb99@gmail.com">marcos.paulo.mpsb99@gmail.com</a></p>
+                    <p><i class="bi bi-envelope-fill"></i> <a href="mailto:marcos.paulo.mpsb99@gmail.com">que tal me enviar um e-mail?</a></p>
                 </div>
             </div>
         </footer>
