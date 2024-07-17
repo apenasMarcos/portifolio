@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
 @SpringBootTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.ANY)
-class DatabaseTestRunnerTest {
+class DatabaseTestRunner {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
@@ -18,7 +18,10 @@ class DatabaseTestRunnerTest {
     @Test
     void testDatabaseConnection() {
         // Verifica se a conexão com o banco de dados pode ser estabelecida sem erros
-        DatabaseTestRunner databaseTestRunner = new DatabaseTestRunner(jdbcTemplate);
-        assertDoesNotThrow(() -> databaseTestRunner.run());
+        try {
+            jdbcTemplate.execute("SELECT 1");
+        } catch (Exception e) {
+            throw new AssertionError("Falha ao conectar com o banco de dados", e);
+        }
     }
 }

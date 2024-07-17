@@ -20,14 +20,23 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-amqp'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	implementation 'org.postgresql:postgresql:42.2.24'
+	implementation 'org.postgresql:postgresql:42.5.1'
 	implementation 'org.projectlombok:lombok:1.18.28'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.junit.jupiter:junit-jupiter:5.9.2'
+	testImplementation 'org.mockito:mockito-junit-jupiter:5.0.0'
+	testImplementation 'com.h2database:h2'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 }
 
-tasks.named('test') {
+dependencyManagement {
+	dependencies {
+		dependency 'org.postgresql:postgresql:42.5.1'
+	}
+}
+
+test {
 	useJUnitPlatform()
 }
