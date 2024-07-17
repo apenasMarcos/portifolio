@@ -1,4 +1,4 @@
-package br.com.marcos.portifolios.Consumer;
+package br.com.marcos.portifolios.consumer;
 
 import br.com.marcos.portifolios.config.SaveMessageQueueConfiguration;
 import br.com.marcos.portifolios.model.dto.MessageForm;

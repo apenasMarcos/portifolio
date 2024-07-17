@@ -28,15 +28,16 @@ public class MessageServiceImpl implements MessageService {
     }
 
     @Override
-    public void saveMessageQueue(MessageForm email) {
-        rabbitTemplate.convertAndSend(salvarMensagemExchange.getName(), SaveMessageQueueConfiguration.ROUTING_KEY, email);
+    public void saveMessageQueue(MessageForm form) {
+        rabbitTemplate.convertAndSend(salvarMensagemExchange.getName(), SaveMessageQueueConfiguration.ROUTING_KEY, form);
     }
 
     @Transactional
     @Override
     public void saveMessage(MessageForm form) {
         Message mensagem = new Message(form);
-        messageRepository.save(mensagem);
+        Message message = messageRepository.save(mensagem);
+        logger.info("mensagem salva com sucesso! id: {} ", message.getId());
     }
 }
 
