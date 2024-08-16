@@ -36,11 +36,12 @@ Veja abaixo as capturas de tela dos modos Dark e Light da aplicação:
 
 ## 📧 Contato
 
-Para mais informações ou dúvidas, entre em contato comigo:
+Para mais informações ou dúvidas, sinta-se à vontade para entrar em contato:
 
-- **Email:** [seu-email@example.com](mailto:marcos.paulo.mpsb99@gmail.com)
-- **LinkedIn:** [Seu Perfil no LinkedIn](https://www.linkedin.com/in/onlymarc/)
-- **GitHub:** [Seu GitHub](https://github.com/apenasMarcos)
+- ![Email Icon](https://img.shields.io/badge/Email-%E2%80%94%20marcos.paulo.mpsb99@gmail.com-brightgreen?style=flat-square) [marcos.paulo.mpsb99@gmail.com](mailto:marcos.paulo.mpsb99@gmail.com)
+- ![LinkedIn Icon](https://img.shields.io/badge/LinkedIn-%E2%80%94%20Perfil%20no%20LinkedIn-blue?style=flat-square) [Perfil no LinkedIn](https://www.linkedin.com/in/onlymarc/)
+- ![GitHub Icon](https://img.shields.io/badge/GitHub-%E2%80%94%20Meu%20GitHub-black?style=flat-square) [Meu GitHub](https://github.com/apenasMarcos)
+
 
 ---
 
