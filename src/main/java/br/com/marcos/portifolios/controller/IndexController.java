@@ -30,11 +30,13 @@ public class IndexController {
     public ResponseEntity<String> saveMessage(@ModelAttribute MessageForm form) {
         try {
             logger.info("Received POST request to save message: {}", form.toString());
-            messageServiceImpl.saveMessageQueue(form);
+            messageServiceImpl.saveMessage(form);
             return ResponseEntity.ok("Messagem encaminhada para salvar.");
         } catch (Exception ex) {
             logger.error("Error saving the message.", ex);
             return ResponseEntity.internalServerError().body("Ocorreu um erro ao salvar sua mensagem.");
         }
     }
+
+
 }
