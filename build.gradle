@@ -38,3 +38,9 @@ dependencyManagement {
 test {
 	useJUnitPlatform()
 }
+
+// Configuração do bootJar para gerar o JAR com o nome desejado
+bootJar {
+	archiveBaseName = 'br.com.marcos'  // Define o nome base do arquivo JAR
+	version = '0.0.1-SNAPSHOT'  // Define a versão do arquivo JAR
+}

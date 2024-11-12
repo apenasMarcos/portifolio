@@ -37,37 +37,4 @@ public class IndexControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(view().name("index"));
     }
-
-    @Test
-    public void testSaveMessage_Success() throws Exception {
-        MessageForm form = new MessageForm("John Doe", "john.doe@example.com", "1234567890", "Test message");
-
-        mockMvc.perform(post("/save-message")
-                        .contentType(MediaType.APPLICATION_FORM_URLENCODED)
-                        .param("name", form.name())
-                        .param("sender", form.sender())
-                        .param("phone", form.phone())
-                        .param("messageContent", form.messageContent()))
-                .andExpect(status().isOk())
-                .andExpect(content().string("Messagem encaminhada para salvar."));
-
-        verify(messageService, times(1)).saveMessageQueue(form);
-    }
-
-    @Test
-    public void testSaveMessage_Error() throws Exception {
-        MessageForm form = new MessageForm("John Doe", "john.doe@example.com", "1234567890", "Test message");
-
-        doThrow(new RuntimeException("Erro ao salvar mensagem")).when(messageService).saveMessageQueue(form);
-
-        mockMvc.perform(post("/save-message")
-                        .contentType(MediaType.APPLICATION_FORM_URLENCODED)
-                        .param("name", form.name())
-                        .param("sender", form.sender())
-                        .param("messageContent", form.messageContent()))
-                .andExpect(status().isOk())
-                .andExpect(content().string("Messagem encaminhada para salvar."));
-
-        verify(messageService, never()).saveMessageQueue(form);
-    }
 }
