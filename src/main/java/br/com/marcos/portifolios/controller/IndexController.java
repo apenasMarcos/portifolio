@@ -31,7 +31,7 @@ public class IndexController {
         try {
             logger.info("Received POST request to save message: {}", form.toString());
             messageServiceImpl.saveMessage(form);
-            return ResponseEntity.ok("Messagem encaminhada para salvar.");
+            return ResponseEntity.ok("Messagem salva!");
         } catch (Exception ex) {
             logger.error("Error saving the message.", ex);
             return ResponseEntity.internalServerError().body("Ocorreu um erro ao salvar sua mensagem.");
