@@ -38,8 +38,9 @@ public class MessageServiceImplTest {
         MessageForm form = new MessageForm("John Doe","johndoe@example.com","123-456-7890","Hello, this is a test message.");
 
         // Mock do comportamento do messageRepository.save
-        Message savedMessage = new Message();
-        savedMessage.setId(UUID.randomUUID());
+        Message savedMessage = Message.builder()
+                                .id(UUID.randomUUID())
+                                .build();
         when(messageRepository.save(any(Message.class))).thenReturn(savedMessage);
 
         // Chama o método que queremos testar

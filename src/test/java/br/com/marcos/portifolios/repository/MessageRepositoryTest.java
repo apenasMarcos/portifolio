@@ -30,7 +30,7 @@ public class MessageRepositoryTest {
         );
 
         // Constrói a entidade Message
-        Message message = new Message(form);
+        Message message = messageBuilder(form);
 
         // Salva a entidade
         Message savedMessage = messageRepository.save(message);
@@ -55,7 +55,7 @@ public class MessageRepositoryTest {
                 "098-765-4321",
                 "This is another test message."
         );
-        Message message = new Message(form);
+        Message message = messageBuilder(form);
         messageRepository.save(message);
 
         // Verifica se a mensagem existe pelo ID
@@ -72,7 +72,7 @@ public class MessageRepositoryTest {
                 "098-765-4321",
                 "This is another test message."
         );
-        Message message = new Message(form);
+        Message message = messageBuilder(form);
         messageRepository.save(message);
 
         // Deleta a mensagem pelo ID
@@ -95,11 +95,20 @@ public class MessageRepositoryTest {
                 "555-555-5555",
                 "This is a new test message."
         );
-        Message message = new Message(form);
+        Message message = messageBuilder(form);
         messageRepository.save(message);
 
         // Conta o número de mensagens novamente
         long finalCount = messageRepository.count();
         assertThat(finalCount).isEqualTo(initialCount + 1);
+    }
+
+    private Message messageBuilder(MessageForm form) {
+        return Message.builder()
+                .name(form.name())
+                .sender(form.sender())
+                .phone(form.phone())
+                .messageContent(form.messageContent())
+                .build();
     }
 }

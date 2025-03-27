@@ -21,7 +21,7 @@ public class MessageTest {
         );
 
         // Cria uma instância da entidade Message usando o Form
-        Message message = new Message(form);
+        Message message = messageBuilder(form);
 
         // Verifica se os valores da entidade Message correspondem aos valores do Form
         assertEquals(form.name(), message.getName());
@@ -33,17 +33,16 @@ public class MessageTest {
     @Test
     public void testMessageConstructorWithAllArgs() {
         // Cria uma instância da entidade Message usando todos os argumentos
-        UUID id = UUID.randomUUID();
-        Message message = new Message(
-                id,
+        MessageForm form = new MessageForm(
                 "Jane Doe",
                 "janedoe@example.com",
                 "098-765-4321",
                 "This is another test message."
         );
 
+        Message message = messageBuilder(form);
+
         // Verifica se os valores estão corretamente atribuídos
-        assertEquals(id, message.getId());
         assertEquals("Jane Doe", message.getName());
         assertEquals("janedoe@example.com", message.getSender());
         assertEquals("098-765-4321", message.getPhone());
@@ -53,21 +52,30 @@ public class MessageTest {
     @Test
     public void testMessageToString() {
         // Cria uma instância da entidade Message
-        UUID id = UUID.randomUUID();
-        Message message = new Message(
-                id,
+        MessageForm form = new MessageForm(
                 "Jane Doe",
                 "janedoe@example.com",
                 "098-765-4321",
                 "This is another test message."
         );
 
-        // Verifica se o método toString não retorna null
+        Message message = messageBuilder(form);
         assertNotNull(message.toString());
 
         // Verifica se o método toString contém todos os valores esperados
-        String expectedString = "Message(id=" + id +
+        String expectedString = "Message(id=" + message.getId() +
                 ", name=Jane Doe, sender=janedoe@example.com, phone=098-765-4321, messageContent=This is another test message.)";
         assertEquals(expectedString, message.toString());
+    }
+
+    private Message messageBuilder(MessageForm form) {
+        UUID id = UUID.randomUUID();
+        return Message.builder()
+                .id(id)
+                .name(form.name())
+                .sender(form.sender())
+                .phone(form.phone())
+                .messageContent(form.messageContent())
+                .build();
     }
 }

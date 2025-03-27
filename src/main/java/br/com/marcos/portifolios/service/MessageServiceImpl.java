@@ -27,9 +27,13 @@ public class MessageServiceImpl implements MessageService {
     @Transactional
     @Override
     public void saveMessage(MessageForm form) {
-        Message mensagem = new Message(form);
-        Message message = messageRepository.save(mensagem);
-        logger.info("mensagem salva com sucesso! id: {} ", message.getId());
+        Message mensagem = Message.builder()
+                            .name(form.name())
+                            .sender(form.sender())
+                            .phone(form.phone())
+                            .messageContent(form.messageContent())
+                            .build();
+        messageRepository.save(mensagem);
     }
 
     @Override

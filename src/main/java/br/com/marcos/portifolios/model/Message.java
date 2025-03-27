@@ -1,18 +1,27 @@
 package br.com.marcos.portifolios.model;
 
-import br.com.marcos.portifolios.model.dto.MessageForm;
-import jakarta.persistence.*;
-import lombok.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import lombok.Data;
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+import lombok.AllArgsConstructor;
 
 import java.util.UUID;
 
 @Entity
 @Table(name = "message")
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
+@Builder
 @EqualsAndHashCode(of = "id")
 @ToString
+@NoArgsConstructor
+@AllArgsConstructor
 public class Message {
 
     @Id
@@ -23,11 +32,4 @@ public class Message {
     private String sender;
     private String phone;
     private String messageContent;
-
-    public Message(MessageForm form) {
-        this.name = form.name();
-        this.sender = form.sender();
-        this.phone = form.phone();
-        this.messageContent = form.messageContent();
-    }
 }
