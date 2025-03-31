@@ -14,28 +14,20 @@
     <title>Portfolios</title>
 </head>
     <body>
-        <header>
-            <div class="interface">
-                <div class="logo">
-                    <a href="/">
-                        <img id="logoImage" src="/images/logo-light.png" alt="Logo Portfolio">
-                    </a>
-                </div>
-
-                <nav class="menu-desktop">
-                    <ul>
-                        <li><a href="/#especialidades" th:text="#{topbar.especialidades}"></a></li>
-                        <li><a href="/#sobre" th:text="#{topbar.sobre}"></a></li>
-                        <li><a href="/#portfolio" th:text="#{topbar.portifolio}"></a></li>
-                        <li><a href="/#formulario" th:text="#{topbar.formulario}"></a></li>
-                    </ul>
-                </nav>
-
-                <div class="trilho" id="errorTrilho">
-                    <div class="indicador"></div>
-                </div>
+    <header>
+        <nav class="menu-desktop">
+            <ul>
+                <li><a href="/" th:text="#{topbar.home}"></a></li>
+                <li><a href="/#sobre" th:text="#{topbar.sobre}"></a></li>
+                <li><a href="/#especialidades" th:text="#{topbar.especialidades}"></a></li>
+                <li><a href="/#portfolio" th:text="#{topbar.portifolio}"></a></li>
+                <li><a href="/#formulario" th:text="#{topbar.formulario}"></a></li>
+            </ul>
+            <div class="trilho" id="errorTrilho">
+                <div class="indicador"></div>
             </div>
-        </header>
+        </nav>
+    </header>
 
 
         <main>
@@ -56,6 +48,7 @@
         </main>
 
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+        <script src="/js/index.js" defer></script>
         <script src="/js/whatsapp.js" defer></script>
         <script src="/js/theme.js" defer></script>
     </body>

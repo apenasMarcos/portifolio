@@ -4,23 +4,21 @@ document.addEventListener('DOMContentLoaded', function() {
     let topoSite = document.getElementById('topo-do-site');
     let especialidades = document.getElementById('especialidades');
     let sobre = document.getElementById('sobre');
-    let logoImage = document.getElementById('logoImage');
+    let scroll = document.getElementById('scroll-down');
     let footerLogoImage = document.getElementById('footerLogoImage');
 
     if (trilho) {
         trilho.addEventListener('click', function () {
-            [trilho, topoSite, especialidades, sobre, body].forEach(elemento => elemento.classList.toggle('dark'));
+            [trilho, topoSite, especialidades, sobre, scroll, body].forEach(elemento => elemento.classList.toggle('dark'));
 
-            logoImage.src = trilho.classList.contains('dark') ? "/images/logo-dark.png" : "/images/logo-light.png";
-            footerLogoImage.src = logoImage.src;
+            footerLogoImage.src = trilho.classList.contains('dark') ? "/images/logo-dark.png" : "/images/logo-light.png";
         });
     } else {
         trilho = document.getElementById('errorTrilho');
         trilho.addEventListener('click', function () {
             [trilho, topoSite, body].forEach(elemento => elemento.classList.toggle('dark'));
 
-            logoImage.src = trilho.classList.contains('dark') ? "/images/logo-dark.png" : "/images/logo-light.png";
-            footerLogoImage.src = logoImage.src;
+            footerLogoImage.src = trilho.classList.contains('dark') ? "/images/logo-dark.png" : "/images/logo-light.png";
         });
     }
 });

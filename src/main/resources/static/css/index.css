@@ -68,12 +68,7 @@ form .btn-enviar input:hover {
 /* ESTILO DO CABEÇALHO */
 header {
     padding: 40px 4%;
-}
-
-header>.interface {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
 }
 
 header a {
@@ -94,12 +89,21 @@ header nav ul {
 
 header nav.menu-desktop ul li {
     display: inline-block;
+    padding: 0 20px;
+}
+
+header nav.menu-desktop{
+    display: flex;
     padding: 0 40px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
 /* ESTILO DO TOPO DO SITE */
 section.topo-do-site {
-    height: 85vh; /* Cada seção ocupa 100% da altura da tela */
+    padding: 40px 4%;
+    height: 90vh; /* Cada seção ocupa 100% da altura da tela */
     display: flex; /* Mantém os elementos alinhados */
     align-items: center; /* Centraliza os conteúdos verticalmente */
     justify-content: center; /* Centraliza horizontalmente (se necessário) */
@@ -113,7 +117,6 @@ section.topo-do-site .flex {
 
 .topo-do-site .left-side {
     flex: 1;
-    padding: 0 0 0 80px;
     flex-direction: column;
     justify-content: center;
 }
@@ -121,11 +124,26 @@ section.topo-do-site .flex {
 section.topo-do-site .right-side {
     flex: 1.15;
     height: 100%;
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
 }
+
 section.topo-do-site .right-side img {
-    width: 100%;
-    height: 100%;
+    position: relative;
     object-fit: cover;
+    animation: flutuar 2s ease-in-out infinite alternate;
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 20px; /* Ajuste conforme necessário */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    animation: flutuarSeta 2s ease-in-out infinite alternate;
 }
 
 .topo-do-site h1 {
@@ -351,7 +369,7 @@ footer .line-footer p a {
 
 .trilho {
     width: 100%;
-    max-width: 80px;
+    max-width: 75px;
     height: 40px;
     background-color: #4d4d4d;
     border-radius: 75px;
@@ -361,24 +379,26 @@ footer .line-footer p a {
 }
 
 .trilho .indicador {
-    width: 40px;
-    height: 40px;
     background-color: #000000;
     border-radius: 50%;
-    transform: scale(0.9);
+    width: 40px;
+    height: 40px;
+    transform: scale(0.6);
     position: absolute;
-    left: 0;
     transition: left 0.5s ease;
+    left: 0;
 }
+
+.trilho.dark .indicador {
+    left: 35px;
+    background-color: #ffffff;
+}
+
 
 .trilho.dark {
     background-color: #c3c3c3;
 }
 
-.trilho.dark .indicador {
-    left: 40px;
-    background-color: #ffffff;
-}
 
 body.dark {
     background-color: #ffffff;
@@ -388,6 +408,7 @@ body.dark h2.titulo,
 body.dark footer .line-footer p a,
 body.dark header nav.menu-desktop a:hover,
 .sobre.dark .txt-sobre,
+.scroll-down.dark,
 .topo-do-site.dark h1,
 .topo-do-site.dark .txt-topo-site p {
     color: #000000;
@@ -421,43 +442,57 @@ body.dark .btn-social button {
         flex-direction: column-reverse;
     }
 
-    .right-side {
-        display: none !important; /* Oculta a imagem no mobile */
-    }
-
-    .left-side {
-        width: 100%; /* O texto ocupa toda a largura */
-        text-align: center; /* Centraliza o texto */
-        padding: 0 !important;
-        align-items: center;
-    }
-
     h2.titulo {
         font-size: 34px;
         line-height: 30px;
     }
 
     /* CABEÇALHO */
-    .menu-desktop,
+    header,
+    .menu-desktop ul,
+    .menu-desktop div,
     .btn-contato {
-        display: none;
+        display: none; /* Esconde os itens do menu no mobile */
     }
 
     /* TOPO DO SITE */
-    section.topo-do-site .flex {
-        gap: 40px;
-    }
-
     section.topo-do-site {
-        padding: 20px 8%;
+        padding: 40px 4%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
     }
 
-    .topo-do-site h1 {
+    section.topo-do-site h1 {
         font-size: 30px;
+        margin-bottom: 20px;
+        flex: 0 0 80%;
     }
 
-    .topo-do-site .img-topo-site img {
+    section.topo-do-site .left-side {
         width: 100%;
+        text-align: center;
+        display: flex;
+        padding: 0 !important;
+        flex: 0 0 70%;
+    }
+
+    section.topo-do-site .right-side {
+        width: 100%;
+        height: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    section.topo-do-site .right-side img {
+        width: 100%;
+        height: 70%;
+        object-fit: contain;
     }
 
     /* ESPECIALIDADES */
@@ -504,28 +539,23 @@ body.dark .btn-social button {
     footer .line-footer {
         text-align: center;
     }
-
-    .trilho {
-        width: 100%;
-        max-width: 100px;
-        height: 50px;
-        background-color: #4d4d4d;
-        border-radius: 75px;
-        position: relative;
-        cursor: pointer;
-        overflow: hidden;
+}
+/* Animação */
+@keyframes flutuarSeta {
+    0% {
+        transform: translateX(-50%) translateY(0);
     }
-
-    .trilho .indicador {
-        width: 50px;
-        height: 50px;
-        transform: scale(0.6);
-        position: absolute;
-        left: 0;
+    100% {
+        transform: translateX(-50%) translateY(15px);
     }
+}
 
-    .trilho.dark .indicador {
-        left: 50px;
-        background-color: #ffffff;
+
+@keyframes flutuar {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(30px);
     }
 }
