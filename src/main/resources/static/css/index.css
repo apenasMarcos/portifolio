@@ -72,7 +72,7 @@ header {
 }
 
 header a {
-    color: #5c5c5c;
+    color: #787878;
     text-decoration: none;
     display: inline-block;
     transition: .2s;
@@ -103,10 +103,10 @@ header nav.menu-desktop{
 /* ESTILO DO TOPO DO SITE */
 section.topo-do-site {
     padding: 40px 4%;
-    height: 90vh; /* Cada seção ocupa 100% da altura da tela */
-    display: flex; /* Mantém os elementos alinhados */
-    align-items: center; /* Centraliza os conteúdos verticalmente */
-    justify-content: center; /* Centraliza horizontalmente (se necessário) */
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 section.topo-do-site .flex {
@@ -125,8 +125,8 @@ section.topo-do-site .right-side {
     flex: 1.15;
     height: 100%;
     display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
+    justify-content: center;
+    align-items: center;
 }
 
 section.topo-do-site .right-side img {
@@ -163,6 +163,36 @@ section.topo-do-site .right-side img {
     margin: 20px 0;
 }
 
+/* ESTILO DO SOBRE */
+section.sobre {
+    padding: 80px 4%;
+}
+
+section.sobre .flex {
+    align-items: center;
+    gap: 60px;
+}
+
+.sobre .txt-sobre {
+    color: #fff;
+}
+
+.sobre .txt-sobre h2 {
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 30px;
+}
+
+.sobre .txt-sobre h2 span {
+    color: #ff6200;
+    display: block;
+}
+
+.sobre .txt-sobre p {
+    margin: 20px 0;
+    text-align: justify;
+}
+
 /* ESTILO DAS ESPECIALIDADES */
 section.especialidades {
     padding: 40px 4%;
@@ -193,36 +223,6 @@ section.especialidades .flex {
 .especialidades .especialidades-box h3 {
     font-size: 28px;
     margin: 15px 0;
-}
-
-/* ESTILO DO SOBRE */
-section.sobre {
-    padding: 80px 4%;
-}
-
-section.sobre .flex {
-    align-items: center;
-    gap: 60px;
-}
-
-.sobre .txt-sobre {
-    color: #fff;
-}
-
-.sobre .txt-sobre h2 {
-    font-size: 40px;
-    line-height: 40px;
-    margin-bottom: 30px;
-}
-
-.sobre .txt-sobre h2 span {
-    color: #ff6200;
-    display: block;
-}
-
-.sobre .txt-sobre p {
-    margin: 20px 0;
-    text-align: justify;
 }
 
 .btn-social button {
@@ -425,6 +425,8 @@ body.dark .btn-social button {
 
 .img-sobre img {
     border-radius: 10%;
+    width: 400px;
+    height: 654px;
     object-fit: cover;
 }
 
@@ -485,7 +487,7 @@ body.dark .btn-social button {
         height: 20%;
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
         margin-top: 20px;
     }
 
@@ -556,6 +558,6 @@ body.dark .btn-social button {
         transform: translateY(0);
     }
     100% {
-        transform: translateY(30px);
+        transform: translateY(40px);
     }
 }
