@@ -228,6 +228,32 @@ section.especialidades .flex {
     transition: .2s;
 }
 
+.tech-icons {
+    margin-top: 20px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+span.tech-icon {
+    background-color: #1e1e1e; /* Fundo escuro */
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 20px; /* Formato de bolinha */
+    font-size: 14px;
+    font-weight: bold;
+    display: inline-block;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);
+    transition: transform 0.2s ease-in-out;
+    user-select: none;
+}
+
+span.tech-icon:hover {
+    transform: scale(1.1);
+    background-color: rgba(255, 98, 0, 0.71); /* Destaque laranja no hover */
+}
+
 .especialidades .especialidades-box:hover {
     transform: scale(1.05);
     box-shadow: 0 0 20px #ffffff78;
