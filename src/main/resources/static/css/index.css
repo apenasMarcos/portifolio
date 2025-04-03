@@ -233,10 +233,6 @@ section.especialidades .flex {
     box-shadow: 0 0 20px #ffffff78;
 }
 
-.especialidades .especialidades-box i {
-    font-size: 70px;
-    color: #ff6200;
-}
 
 .especialidades .especialidades-box h3 {
     font-size: 28px;
@@ -526,6 +522,11 @@ body.dark .btn-social button {
     .sobre .txt-sobre p,
     .btn-social{
         text-align: center;
+    }
+
+    .sobre .btn-social{
+        display: flex;
+        justify-content: center;
     }
 
     /* PORTFÓLIO */
