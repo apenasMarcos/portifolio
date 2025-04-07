@@ -301,11 +301,11 @@ section.portfolio .flex {
 .img-port {
     width: 360px;
     height: 460px;
+    border-radius: 40px;
     background-size: cover;
     background-position: 100% 0;
     transition: 8s;
     cursor: pointer;
-    border-radius: 40px;
     position: relative;
 }
 
@@ -333,6 +333,98 @@ section.portfolio .flex {
 
 .overlay:hover {
     opacity: 1;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal-content {
+    background: #111;
+    padding: 30px;
+    border-radius: 16px;
+    color: white;
+    width: 500px;
+    max-width: 90%;
+    text-align: left;
+    position: relative;
+    animation: fadeIn .3s ease-in-out;
+}
+
+.modal-content.modal-split {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 20px;
+    background: rgba(17, 17, 17, 0.96);
+    border-radius: 16px;
+    width: 70%;
+    max-height: 90vh;
+    overflow: hidden;
+    animation: fadeIn .3s ease-in-out;
+    position: relative;
+}
+
+.modal-image {
+    flex: 0 0 40%;
+    overflow-y: auto;
+    max-height: 70vh;
+    border-radius: 12px;
+}
+
+.modal-image img {
+    width: 100%;
+    border-radius: 12px;
+    display: block;
+}
+
+.modal-info {
+    flex: 1;
+    overflow-y: auto;
+    color: #fff;
+}
+
+.modal-info a {
+    color: #ff7f50;
+    text-decoration: none;
+}
+
+.modal-info a:hover {
+    text-decoration: underline;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 /* ESTILO DO FORMULÁRIO DE CONTATO */

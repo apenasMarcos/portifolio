@@ -134,18 +134,38 @@
                 <div class="interface">
                     <h2 class="titulo">PROJETOS <span>PESSOAIS</span></h2>
                     <div class="flex">
-                        <div class="img-port" style="background-image: url(/images/imagem.jpg);">
+                        <div class="img-port" style="background-image: url(/images/imagem.jpg);" data-id="projeto1">
                             <div class="overlay">Projeto 1 (em andamento)</div>
                         </div>
-                        <div class="img-port" style="background-image: url(/images/imagem.jpg);">
+                        <div class="img-port" style="background-image: url(/images/imagem.jpg);" data-id="projeto2">
                             <div class="overlay">Projeto 2 (em andamento)</div>
                         </div>
-                        <div class="img-port" style="background-image: url(/images/imagem.jpg);">
+                        <div class="img-port" style="background-image: url(/images/imagem.jpg);" data-id="projeto3">
                             <div class="overlay">Projeto 3 (em andamento)</div>
                         </div>
                     </div>
                 </div>
             </section>
+
+            <div class="modal-overlay" id="modal">
+                <div class="modal-content modal-split">
+                    <span class="modal-close" id="closeModal">&times;</span>
+
+                    <div class="modal-image">
+                        <img src="" alt="Imagem do Projeto">
+                    </div>
+
+                    <div class="modal-info">
+                        <h2></h2>
+                        <p></p>
+                        <p>
+                            🔗 <a href="#" target="_blank">Repositório no GitHub</a><br>
+                            🌐 <a href="#" target="_blank">Ver Projeto Online</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
 
             <section id="formulario" class="formulario">
                 <div class="interface">
@@ -194,6 +214,7 @@
 
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
         <script src="/js/index.js" defer></script>
+        <script src="/js/projetos.js" defer></script>
         <script src="/js/whatsapp.js" defer></script>
         <script src="/js/theme.js" defer></script>
     </body>
