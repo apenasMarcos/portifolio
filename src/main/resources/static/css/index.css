@@ -65,6 +65,10 @@ form .btn-enviar input:hover {
     transform: scale(1.05);
 }
 
+section {
+    height: 90vh;
+}
+
 /* ESTILO DO CABEÇALHO */
 header {
     padding: 40px 4%;
@@ -104,7 +108,6 @@ header nav.menu-desktop{
 /* ESTILO DO TOPO DO SITE */
 section.topo-do-site {
     padding: 40px 4%;
-    height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -214,6 +217,7 @@ section.sobre .flex {
 /* ESTILO DAS ESPECIALIDADES */
 section.especialidades {
     padding: 40px 4%;
+    height: auto;
 }
 
 section.especialidades .flex {
@@ -571,6 +575,10 @@ body.dark .btn-social button {
     h2.titulo {
         font-size: 34px;
         line-height: 30px;
+    }
+
+    section {
+        height: auto;
     }
 
     /* CABEÇALHO */
