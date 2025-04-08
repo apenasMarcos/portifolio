@@ -66,7 +66,7 @@ form .btn-enviar input:hover {
 }
 
 section {
-    height: 90vh;
+    height: 95vh;
 }
 
 /* ESTILO DO CABEÇALHO */
@@ -111,6 +111,7 @@ section.topo-do-site {
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 90vh;
 }
 
 section.topo-do-site .flex {
@@ -204,6 +205,28 @@ section.sobre .flex {
     margin: 15px 0;
 }
 
+.btn-social button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background-color: #ff6200;
+    color: #000000;
+    font-size: 22px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: .2s;
+    outline: none;
+}
+
+.btn-social a {
+    text-decoration: none;
+    display: inline-block;
+    width: fit-content;
+    height: fit-content;
+    margin: 5px;
+}
+
 .sobre .btn-social{
     display: flex;
 }
@@ -253,7 +276,8 @@ span.tech-icon {
     user-select: none;
 }
 
-span.tech-icon:hover {
+.especialidades span.tech-icon:hover,
+.especialidades.dark span.tech-icon:hover {
     transform: scale(1.1);
     background-color: rgba(255, 98, 0, 0.71); /* Destaque laranja no hover */
 }
@@ -269,26 +293,18 @@ span.tech-icon:hover {
     margin: 15px 0;
 }
 
-.btn-social button {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    border: none;
-    background-color: #ff6200;
-    color: #000000;
-    font-size: 22px;
-    cursor: pointer;
-    margin: 0 5px;
-    transition: .2s;
-    outline: none;
-}
-
-.btn-social a {
+.especialidades a {
+    color: #fff;
     text-decoration: none;
     display: inline-block;
-    width: fit-content;
-    height: fit-content;
-    margin: 5px;
+    padding: 30px;
+    font-size: 21px;
+    margin-top: 30px;
+    transition: transform 0.3s ease;
+}
+
+.especialidades a:hover {
+    transform: scale(1.05);
 }
 
 /* ESTILO DO PORTFÓLIO */
@@ -546,7 +562,8 @@ body.dark header nav.menu-desktop a:hover,
 .sobre.dark .txt-sobre,
 .scroll-down.dark,
 .topo-do-site.dark h1,
-.topo-do-site.dark .txt-topo-site p {
+.topo-do-site.dark .txt-topo-site p,
+.especialidades.dark a {
     color: #000000;
 }
 
@@ -554,6 +571,10 @@ body.dark .btn-social button {
     color: white;
 }
 
+.especialidades.dark span.tech-icon {
+    color: #3c3a3a;
+    background-color: #b7b7b7;
+}
 .especialidades.dark .especialidades-box {
     color: #1e1e1e;
 }
