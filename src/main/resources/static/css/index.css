@@ -258,7 +258,7 @@ section.especialidades .flex {
 .tech-icons {
     margin-top: 20px;
     display: flex;
-    gap: 8px;
+    gap: 12px;
     flex-wrap: wrap;
 }
 
@@ -277,7 +277,9 @@ span.tech-icon {
 }
 
 .especialidades span.tech-icon:hover,
-.especialidades.dark span.tech-icon:hover {
+.especialidades.dark span.tech-icon:hover,
+.modal-content.modal-split .modal-info span.tech-icon:hover,
+.modal-content.modal-split.dark .modal-info span.tech-icon:hover {
     transform: scale(1.1);
     background-color: rgba(255, 98, 0, 0.71); /* Destaque laranja no hover */
 }
@@ -418,15 +420,20 @@ section.portfolio .flex {
     color: #fff;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* centraliza verticalmente */
-    gap: 16px; /* espaço entre textos internos */
-    padding-right: 10px; /* evita colar no canto da scrollbar */
+    justify-content: flex-start;
+    gap: 16px;
+    padding: 7vh 10px 10px 0; /* top, right, bottom, left */
 }
 
 
 .modal-info h2 {
     font-size: 1.8rem;
-    margin-bottom: 8px;
+    margin: 0 0 12px 0; /* sem margem no topo, 12px abaixo */
+    padding-top: 0;
+}
+
+.modal-info .tech-icons {
+    margin: 10px;
 }
 
 .modal-info p {
@@ -574,6 +581,9 @@ footer .line-footer p a {
 body.dark {
     background-color: #ffffff;
 }
+.modal-content.modal-split.dark {
+    background: rgba(255, 255, 255, 0.51);
+}
 
 body.dark h2.titulo,
 body.dark footer .line-footer p a,
@@ -582,7 +592,8 @@ body.dark header nav.menu-desktop a:hover,
 .scroll-down.dark,
 .topo-do-site.dark h1,
 .topo-do-site.dark .txt-topo-site p,
-.especialidades.dark a {
+.especialidades.dark a,
+.modal-content.modal-split.dark .modal-info{
     color: #000000;
 }
 
@@ -590,7 +601,8 @@ body.dark .btn-social button {
     color: white;
 }
 
-.especialidades.dark span.tech-icon {
+.especialidades.dark span.tech-icon ,
+.modal-content.modal-split.dark .modal-info span.tech-icon {
     color: #3c3a3a;
     background-color: #b7b7b7;
 }
