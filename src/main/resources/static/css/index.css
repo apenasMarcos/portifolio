@@ -388,8 +388,8 @@ section.portfolio .flex {
 .modal-content.modal-split {
     display: flex;
     flex-direction: row;
-    gap: 20px;
-    padding: 20px;
+    gap: 30px;
+    padding: 30px;
     background: rgba(17, 17, 17, 0.96);
     border-radius: 16px;
     width: 70%;
@@ -416,11 +416,30 @@ section.portfolio .flex {
     flex: 1;
     overflow-y: auto;
     color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* centraliza verticalmente */
+    gap: 16px; /* espaço entre textos internos */
+    padding-right: 10px; /* evita colar no canto da scrollbar */
+}
+
+
+.modal-info h2 {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+}
+
+.modal-info p {
+    font-size: 1rem;
+    line-height: 1.6;
 }
 
 .modal-info a {
-    color: #ff7f50;
+    color: #00bfff;
     text-decoration: none;
+    font-weight: 500;
+    margin-top: 8px;
+    display: inline-block;
 }
 
 .modal-info a:hover {

@@ -10,10 +10,10 @@ const projetos = {
         link: 'https://projeto-viagens.netlify.app'
     },
     projeto2: {
-        titulo: 'Projeto Financeiro',
+        titulo: 'Conversor de moedas',
         descricao: 'Dashboard para controle financeiro pessoal com gráficos interativos.',
-        imagem: '/images/imagem.jpg',
-        github: 'https://github.com/seurepo/financeiro',
+        imagem: '/images/projetos/conversor-moedas.png',
+        github: 'https://github.com/apenasMarcos/conversor-de-moedas',
         link: ''
     },
     projeto3: {
@@ -42,7 +42,7 @@ document.querySelectorAll('.img-port').forEach(img => {
 
             if (projeto.link) {
                 links[1].href = projeto.link;
-                links[1].textContent = 'Ver Projeto Online';
+                links[1].textContent = '🌐 Ver Projeto Online';
                 links[1].style.display = 'inline';
             } else {
                 links[1].style.display = 'none';
