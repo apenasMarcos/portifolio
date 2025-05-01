@@ -21,7 +21,6 @@
                     <li><a href="#sobre" th:text="#{topbar.sobre}"></a></li>
                     <li><a href="#especialidades" th:text="#{topbar.experiencias}"></a></li>
                     <li><a href="#portfolio" th:text="#{topbar.portifolio}"></a></li>
-                    <li><a href="#formulario" th:text="#{topbar.formulario}"></a></li>
                 </ul>
                 <div class="trilho" id="trilho">
                     <div class="indicador"></div>
@@ -180,21 +179,6 @@
                     </div>
                 </div>
             </div>
-
-
-            <section id="formulario" class="formulario">
-                <div class="interface">
-                    <h2 class="titulo">DESEJA SALVAR UMA <span>MENSAGEM</span>?</h2>
-
-                    <form id="meuFormulario">
-                        <label for="name"></label><input type="text" name="name" id="name" placeholder="Nome completo:" required>
-                        <label for="sender"></label><input type="email" name="sender" id="sender" placeholder="E-mail:">
-                        <label for="phone"></label><input type="text" name="phone" id="phone" placeholder="Celular:">
-                        <label for="messageContent"></label><textarea name="messageContent" id="messageContent" placeholder="Mensagem" required></textarea>
-                        <div class="btn-enviar"><input type="submit" value="SALVAR"></div>
-                    </form>
-                </div>
-            </section>
         </main>
 
         <footer>

@@ -59,8 +59,7 @@ h2.titulo span {
     color: #ff6200;
 }
 
-button:hover,
-form .btn-enviar input:hover {
+button:hover {
     box-shadow: 0 0 8px #ff6200;
     transform: scale(1.05);
 }
@@ -474,51 +473,6 @@ section.portfolio .flex {
         opacity: 1;
         transform: scale(1);
     }
-}
-
-/* ESTILO DO FORMULÁRIO DE CONTATO */
-section.formulario {
-    padding: 80px 4%;
-}
-
-form {
-    max-width: 500px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    gap: 10px;
-    margin: 40px auto 0;
-}
-
-form input,
-form textarea {
-    width: 100%;
-    background-color: #242424;
-    border: 0;
-    outline: 0;
-    padding: 20px 15px;
-    border-radius: 15px;
-    color: #fff;
-    font-size: 18px;
-}
-
-form textarea {
-    resize: none;
-    max-height: 200px;
-}
-
-form .btn-enviar {
-    margin-top: 20px;
-    text-align: center;
-}
-
-form .btn-enviar input {
-    width: 120px;
-    background-color: #ff6200;
-    color: #000;
-    font-weight: 700;
-    cursor: pointer;
-    transition: .2s;
 }
 
 /* ESTILO DO RODAPÉ */
