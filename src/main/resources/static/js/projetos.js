@@ -2,8 +2,7 @@ const modal = document.getElementById('modal');
 const closeBtn = document.getElementById('closeModal');
 const techContainer = modal.querySelector('.tech-icons');
 const topicosContainer = modal.querySelector('.modal-topicos');
-
-
+const projetosContainer = document.getElementById('projetos-container');
 const projetos = {
     projeto1: {
         titulo: 'Mural Criando Futuro',
@@ -17,12 +16,12 @@ const projetos = {
         youtube: 'https://www.youtube.com/watch?v=0Bo-PrUSYiY',
         tecnologias: ['Html', 'CSS', 'Javascript', 'Java', 'Spring Boot', 'Docker', 'Spring Security', 'Caffeine Cache', 'Supabase', 'Imgur API'],
         topicos: [
-            'Mural de postagens com imagens',
-            'Gerenciamento de conteúdo por usuários autenticados',
-            'Exibição de cardápio semanal',
-            'Seção institucional com informações de contato',
-            'Interface amigável e responsiva',
-            'Sistema de cache para performance otimizada'
+            '🖼️ Mural de postagens com imagens',
+            '👤 Gerenciamento de conteúdo por usuários autenticados',
+            '📅 Exibição de cardápio semanal',
+            '🏢 Seção institucional com informações de contato',
+            '🎨 Interface amigável e responsiva',
+            '⚡ Sistema de cache para performance otimizada'
         ]
     },
     projeto2: {
@@ -37,19 +36,83 @@ const projetos = {
             '📏 Conversor de Comprimento',
             '⚖️ Conversor de Massa',
             '🌡️ Conversor de Temperatura',
-            '💾 Conversor de Armazenamento',
+            '💾 Conversor de Armazenamento'
         ]
     },
     projeto3: {
-        titulo: 'Em andamento',
-        descricao: 'Dashboard para controle financeiro pessoal com gráficos interativos.',
-        imagem: '/images/imagem.jpg',
-        github: 'https://github.com/seurepo/financeiro',
+        titulo: 'Organizador de Tarefas',
+    descricao: 'Aplicação web para gerenciar tarefas, com funcionalidades de adicionar, editar, excluir e reorganizar tarefas com drag-and-drop enviando requisições para o back-end',
+        imagem: '/images/projetos/organizador-tarefas.png',
+        github: 'https://github.com/apenasMarcos/agendador-tarefas',
         link: '',
-        tecnologias: ['react', 'chartjs', 'sass']
-    }
+        tecnologias: ['HTML', 'CSS', 'JavaScript', 'Java' , 'Spring Boot', 'Thymeleaf', 'Docker'],
+        topicos: [
+            '📝 Adicionar, editar e excluir tarefas',
+            '📋 Visualização de tarefas cadastradas',
+            '🔄 Reorganização de tarefas via drag-and-drop',
+            '💬 Confirmação antes da exclusão de tarefas',
+            '🚀 Deploy simplificado utilizando Docker'
+        ]
+    },
+    projeto4: {
+        titulo: 'Decodificador de Texto',
+        descricao: 'O Decodificador de Texto é uma aplicação web desenvolvida como parte do desafio proposto pela Alura em parceria com a Oracle ONE. O objetivo é aplicar os conhecimentos de HTML, CSS e JavaScript criando uma ferramenta simples, responsiva e funcional para codificação e decodificação de mensagens.\n' +
+            '\n' +
+            'A aplicação conta com um design claro e escuro, botões interativos, mensagens de alerta e uma interface minimalista, com foco em usabilidade e acessibilidade.\n' +
+            '\n',
+        imagem: '/images/projetos/criptografia_e_descriptografia.png',
+        github: 'https://github.com/apenasMarcos/decodificador-de-texto',
+        link: 'https://apenasmarcos.github.io/decodificador-de-texto/',
+        youtube: '',
+        tecnologias: ['HTML', 'CSS', 'JavaScript'],
+        topicos: [
+            '🔐 Criptografia e descriptografia de mensagens',
+            '🌗 Alternância entre tema claro e escuro',
+            '📱 Design responsivo para diferentes dispositivos',
+            '🎯 Interface limpa e intuitiva',
+            '⚡ Animações e transições suaves',
+            '🧪 Projeto desenvolvido como parte de desafio da Alura + Oracle ONE'
+        ]
+    },
+    projeto5: {
+        titulo: 'Em andamento',
+        descricao: 'Inicialmente minha ideia é desenvolver um aplicativo para visualizar series recém lançadas e suas avaliações no IMDB, podendo também ser possivel adicioanr comentarios ' +
+            'e avaliações para cada usuário logado',
+        imagem: '/images/projetos/andamento.png',
+        github: '',
+        link: '',
+        youtube: '',
+        tecnologias: ['HTML', 'CSS', 'JavaScript', 'Java', 'Spring Boot', 'Thymeleaf'],
+        topicos: [
+        ]
+    },
+    projeto6: {
+        titulo: 'Em andamento',
+        descricao: 'ainda sem ideias',
+        imagem: '/images/projetos/none.png',
+        github: '',
+        link: '',
+        youtube: '',
+        tecnologias: [],
+        topicos: [
+        ]
+    },
 };
 
+Object.entries(projetos).forEach(([id, projeto]) => {
+    const div = document.createElement('div');
+    div.className = 'img-port';
+    div.style.backgroundImage = `url(${projeto.imagem})`;
+    div.setAttribute('data-id', id);
+
+    const overlay = document.createElement('div');
+    overlay.className = 'overlay';
+    overlay.textContent = projeto.titulo;
+
+    div.appendChild(overlay);
+    projetosContainer.appendChild(div);
+
+});
 
 document.querySelectorAll('.img-port').forEach(img => {
     img.addEventListener('click', () => {
