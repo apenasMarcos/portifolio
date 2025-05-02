@@ -691,6 +691,25 @@ body.dark .btn-social button {
         gap: 60px;
     }
 
+    .modal-content.modal-split {
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    .modal-image, .modal-info {
+        flex: unset;
+        width: 100%;
+        max-height: none;
+        padding: 0;
+    }
+
+    .modal-info {
+        padding: 20px 0 0 0;
+    }
+
     /* RODAPÉ */
     footer .flex {
         flex-direction: column;
