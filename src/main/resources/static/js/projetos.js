@@ -2,7 +2,11 @@ const modal = document.getElementById('modal');
 const closeBtn = document.getElementById('closeModal');
 const techContainer = modal.querySelector('.tech-icons');
 const topicosContainer = modal.querySelector('.modal-topicos');
-const projetosContainer = document.getElementById('projetos-container');
+const modalInfo = modal.querySelector('.modal-info');
+modalInfo.classList.remove('modal-no-padding');
+const linha1 = document.getElementById('linha-1');
+const linha2 = document.getElementById('linha-2');
+
 const projetos = {
     projeto1: {
         titulo: 'Mural Criando Futuro',
@@ -88,9 +92,6 @@ const projetos = {
     },
 };
 
-const linha1 = document.getElementById('linha-1');
-const linha2 = document.getElementById('linha-2');
-
 Object.entries(projetos).forEach(([id, projeto], index) => {
     const div = document.createElement('div');
     div.className = 'img-port';
@@ -158,6 +159,11 @@ document.querySelectorAll('.img-port').forEach(img => {
                 topicosContainer.innerHTML += '</ul>';
             } else if (topicosContainer) {
                 topicosContainer.innerHTML = '';
+            }
+
+
+            if (id === 'projeto3') {
+                modalInfo.classList.add('modal-no-padding');
             }
 
             modal.classList.add('active');
