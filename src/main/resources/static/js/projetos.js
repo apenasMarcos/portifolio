@@ -78,28 +78,20 @@ const projetos = {
         titulo: 'Em andamento',
         descricao: 'Inicialmente minha ideia é desenvolver um aplicativo para visualizar series recém lançadas e suas avaliações no IMDB, podendo também ser possivel adicioanr comentarios ' +
             'e avaliações para cada usuário logado',
-        imagem: '/images/projetos/andamento.png',
-        github: '',
+        imagem: '/images/projetos/obra.png',
+        github: 'https://github.com/apenasMarcos/screenmatch',
         link: '',
         youtube: '',
         tecnologias: ['HTML', 'CSS', 'JavaScript', 'Java', 'Spring Boot', 'Thymeleaf'],
         topicos: [
         ]
     },
-    projeto6: {
-        titulo: 'Em andamento',
-        descricao: 'ainda sem ideias',
-        imagem: '/images/projetos/none.png',
-        github: '',
-        link: '',
-        youtube: '',
-        tecnologias: [],
-        topicos: [
-        ]
-    },
 };
 
-Object.entries(projetos).forEach(([id, projeto]) => {
+const linha1 = document.getElementById('linha-1');
+const linha2 = document.getElementById('linha-2');
+
+Object.entries(projetos).forEach(([id, projeto], index) => {
     const div = document.createElement('div');
     div.className = 'img-port';
     div.style.backgroundImage = `url(${projeto.imagem})`;
@@ -110,8 +102,12 @@ Object.entries(projetos).forEach(([id, projeto]) => {
     overlay.textContent = projeto.titulo;
 
     div.appendChild(overlay);
-    projetosContainer.appendChild(div);
 
+    if (index < 3) {
+        linha1.appendChild(div);
+    } else {
+        linha2.appendChild(div);
+    }
 });
 
 document.querySelectorAll('.img-port').forEach(img => {

@@ -29,7 +29,7 @@ body {
     padding: 10px 40px;
     font-size: 18px;
     font-weight: 600;
-    background-color: #ff6200;
+    background-color: #54b5a2;
     border: 0;
     border-radius: 30px;
     cursor: pointer;
@@ -56,11 +56,11 @@ h2.titulo {
 }
 
 h2.titulo span {
-    color: #ff6200;
+    color: #54b5a2;
 }
 
 button:hover {
-    box-shadow: 0 0 8px #ff6200;
+    box-shadow: 0 0 8px #54b5a2;
     transform: scale(1.05);
 }
 
@@ -157,7 +157,7 @@ section.topo-do-site .right-side img {
 }
 
 .topo-do-site .txt-topo-site h1 span {
-    color: #ff6200;
+    color: #54b5a2;
 }
 
 .topo-do-site .txt-topo-site p {
@@ -193,7 +193,7 @@ section.sobre .flex {
 }
 
 .sobre .txt-sobre h2 span {
-    color: #ff6200;
+    color: #54b5a2;
     display: block;
 }
 
@@ -209,7 +209,7 @@ section.sobre .flex {
     height: 60px;
     border-radius: 50%;
     border: none;
-    background-color: #ff6200;
+    background-color: #54b5a2;
     color: #000000;
     font-size: 22px;
     cursor: pointer;
@@ -280,7 +280,7 @@ span.tech-icon {
 .modal-content.modal-split .modal-info span.tech-icon:hover,
 .modal-content.modal-split.dark .modal-info span.tech-icon:hover {
     transform: scale(1.1);
-    background-color: rgba(255, 98, 0, 0.71); /* Destaque laranja no hover */
+    background-color: rgba(56, 170, 146, 0.94); /* Destaque laranja no hover */
 }
 
 .especialidades .especialidades-box:hover {
@@ -335,6 +335,14 @@ section.portfolio .flex {
 
 .img-port:hover {
     background-position: 100% 100%;
+}
+
+.linha-dois {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
 }
 
 .overlay {
@@ -487,14 +495,16 @@ footer .flex {
 
 footer .line-footer {
     padding: 20px 0;
+    justify-content: center;
+    display: flex;
 }
 
 .borda {
-    border-top: 2px solid #ff6200;
+    border-top: 2px solid #54b5a2;
 }
 
 footer .line-footer p i {
-    color: #ff6200;
+    color: #54b5a2;
     font-size: 22px;
 }
 
