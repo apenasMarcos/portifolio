@@ -65,7 +65,8 @@ button:hover {
 }
 
 section {
-    height: 95vh;
+    min-height: 95vh;
+    height: auto;
 }
 
 /* ESTILO DO CABEÇALHO */
@@ -312,6 +313,8 @@ span.tech-icon {
 section.portfolio {
     padding: 80px 4%;
     box-shadow: 0 0 40px 10px #ffffff1d;
+    min-height: 100vh; /* Faz a seção ocupar pelo menos a tela inteira */
+    height: auto;
 }
 
 section.portfolio .flex {
