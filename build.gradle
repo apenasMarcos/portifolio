@@ -18,28 +18,20 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.projectlombok:lombok:1.18.28'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.junit.jupiter:junit-jupiter:5.9.2'
 	testImplementation 'org.mockito:mockito-junit-jupiter:5.0.0'
-	runtimeOnly 'com.h2database:h2'
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 }
 
-dependencyManagement {
-	dependencies {
-		dependency 'org.postgresql:postgresql:42.5.1'
-	}
-}
 
 test {
 	useJUnitPlatform()
 }
 
-// Configuração do bootJar para gerar o JAR com o nome desejado
 bootJar {
-	archiveBaseName = 'br.com.marcos'  // Define o nome base do arquivo JAR
-	version = '0.0.1-SNAPSHOT'  // Define a versão do arquivo JAR
+	archiveBaseName = 'br.com.marcos'
+	version = '0.0.1-SNAPSHOT'
 }

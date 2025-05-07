@@ -1,14 +1,11 @@
-# Use uma imagem oficial do OpenJDK como base
-FROM openjdk:17-jdk-slim
-
-# Defina o diretório de trabalho dentro do container
+# Etapa 1: Build
+FROM gradle:8.2.1-jdk17 AS build
 WORKDIR /app
+COPY . .
+RUN gradle bootJar --no-daemon
 
-# Copie o arquivo JAR gerado pelo Gradle para dentro do container
-COPY build/libs/br.com.marcos-0.0.1-SNAPSHOT.jar app.jar
-
-# Comando para rodar a aplicação
+# Etapa 2: Runtime
+FROM openjdk:17-jdk-slim
+WORKDIR /app
+COPY --from=build /app/build/libs/*.jar app.jar
 ENTRYPOINT ["java", "-jar", "app.jar"]
-
-# Exponha a porta em que a aplicação estará rodando
-EXPOSE 8080
