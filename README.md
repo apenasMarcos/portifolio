@@ -26,11 +26,11 @@ Veja abaixo as capturas de tela dos modos Dark e Light da aplicação:
 
 ### 🌑 Modo Dark
 
-![Demonstração Modo Dark](https://github.com/apenasMarcos/portifolios/assets/30758679/bdc60e02-9855-4da1-86fa-804fcd90ee4a)
+![Demonstração Modo Dark](![image](https://github.com/user-attachments/assets/43026fd0-23ce-4e9b-ac12-732dd1980252))
 
 ### 🌞 Modo Light
 
-![Demonstração Modo Light](https://github.com/apenasMarcos/portifolios/assets/30758679/801b0cce-f2e5-47c8-a570-1f35be8d8309)
+![Demonstração Modo Light](![image](https://github.com/user-attachments/assets/7b709b44-e461-4c29-8d01-67c6b469c240))
 
 ---
 
