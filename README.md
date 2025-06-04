@@ -1,7 +1,7 @@
 # 🌟 Portfólio 🌟
 
-Bem-vindo ao meu portfólio, um espaço dedicado a exibir e organizar meus projetos pessoais. Este projeto foi criado para proporcionar uma visão clara e detalhada do meu trabalho, destacando minhas competências e experiências como desenvolvedor Full Stack. 🚀
-
+Bem-vindo ao meu portfólio, um espaço dedicado a exibir e organizar meus projetos pessoais, visando destacar as minhas competências e experiências como desenvolvedor Full Stack. 🚀
+🔗 [Acesse aqui](https://apenasmarcos.onrender.com/)
 ---
 
 ## 📖 Sobre
@@ -12,12 +12,12 @@ Este portfólio é uma plataforma desenvolvida para centralizar e gerenciar meus
 
 ## 🛠️ Tecnologias Utilizadas
 
-- **Java** 🟩: Utilizado para o Backend.
-- **JavaScript** 🌐: Para tornar as páginas dinâmicas e interativas.
-- **HTML & CSS** 🎨: Utilizei a biblioteca do Bootstrap e configurei boa parte do CSS manualmente.
-- **RabbitMQ** 📬: Serviço de mensageria para gerenciar e salvar mensagens.
+- **Java** 🟩: utilizado para o Backend.
+- **HTML & CSS** 🎨: utilizei a biblioteca do Bootstrap e configurei boa parte do CSS manualmente.
+- **Thymeleaf** 🧩: motor de templates utilizado para renderizar as páginas HTML de forma dinâmica no lado do servidor.
+- **JavaScript** 🌐: para tornar as páginas dinâmicas e interativas.
 - **Spring Boot** 🚀: Framework escolhido por ser ideal para o desenvolvimento web com Java.
-
+- **Docker** 🐳: utilizado para containerizar a aplicação e facilitar a execução em diferentes ambientes.
 ---
 
 ## 💻 Demonstração
@@ -49,9 +49,9 @@ Para mais informações ou dúvidas, sinta-se à vontade para entrar em contato:
 
 - [Documentação](#) (em andamento)
 - [Repositório](https://github.com/apenasMarcos/portifolios)
-- [Demo Online](#) (em andamento)
+- [Versão Online](https://apenasmarcos.onrender.com/)
 
 ---
 
-👨‍💻 **Desenvolvido por [Marcos Braga](https://github.com/apenasMarcos)**
+👨‍💻 **Desenvolvido por [Marcos Braga](https://www.linkedin.com/in/onlymarc/)**
 

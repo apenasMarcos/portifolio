@@ -711,7 +711,7 @@ body.dark .btn-social button {
 
     .modal-content.modal-split {
         flex-direction: column;
-        width: 90%;
+        width: 50%;
         height: auto;
         max-height: 90vh;
         overflow-y: auto;
